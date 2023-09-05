@@ -1,0 +1,5386 @@
+@charset "utf-8";
+
+
+@media all and (max-width:600px) {
+    h1{
+        font-family: "payboocBold";
+    }
+    /* 로고 */
+    .main-title h1{
+        font-size: 4vw;
+        text-align: center;
+        padding: 30px 0;
+        position: relative;
+        width: 50%;
+        margin: 0 auto;
+        color: #0E2688;
+        font-weight: bold;
+        padding-left: 26px;
+    }
+    .main-title h1::before{
+        content: "";
+        background: url(../images/logo.png) no-repeat 100% 100% / cover;
+        width: 37px;
+        height: 43px;
+        position: absolute;
+        left: 20%;
+        bottom: 17px;
+    }
+
+    /* 하단 nav */
+    .nav-bar{
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        background-color: #F4F8FC;
+        z-index: 9;
+        /* display: none; */
+        border-top: 1px #eee solid;
+    }
+    .nav-menu{
+        width: 88%;
+        margin: 0 auto;
+    }
+    .nav{
+        display: flex;
+        justify-content: space-between;
+        padding: 47px 0 10px 0;
+    }
+    .nav li {
+        width: 12%;
+
+    }
+    .nav li a{
+        display: block;
+        position: relative;
+        text-align: center;
+        font-size: 13px;
+        color: #0E2688;
+    }
+    .nav li a::before{
+        content: "";
+        width: 29px;
+        height: 29px;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        top: -34px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .nav li .home::before{
+        background-image: url(../images/home.png);
+    }
+    .nav li .info::before{
+        background-image: url(../images/info.png);
+    }
+    .nav li .user::before{
+        background-image: url(../images/user.png);
+    }
+    .nav li .delivery-notice::before{
+        background-image: url(../images/delivery-notice.png);
+    }
+
+
+    /*********** 버튼 공통값 ***********/
+
+    /* 하단버튼 */
+    
+    .login-wrap .login-box .next-btn,
+    .join-wrap  .join-box  .next-btn,
+    .resident-form-wrap .next-btn,
+    .delivery-form-wrap .next-btn,
+    .laundary-pickup-wrap .laundary-btn {
+        text-align: center;
+    }
+
+
+    .login-wrap .login-box .next-btn button,
+    .resident-form-wrap .form-wrap .next-btn button,
+    .join-wrap .join-box .next-btn button,
+    .delivery-form-wrap .form-wrap .next-btn button{
+        background-color: #0E2688;
+        width: 40%;
+        color: #fff;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 65px;
+        border-radius: 50px;
+        padding: 18px 10px;
+    }
+
+    /* 안내창 wrap  */
+    .login-wrap .notice,
+    .resident-form-wrap .notice-wrap,
+    .delivery-form-wrap .notice-wrap,
+    .select_boxes .notice,
+    .select_boxes .notice1{
+        width: 300px;
+        background-color: #fff;
+        padding: 20px;
+        text-align: center;
+        border-radius: 22px;
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 35%;
+        height: 190px;
+        /* display: none; */
+        z-index: 999;
+    }
+    /* .login-wrap  .resident-popUp,
+    .login-wrap  .delivery-popUp{
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 22px;
+        position: absolute;
+        width: 300px;
+        /* display: none; */
+        /* left: 50%;
+        transform: translateX(-50%); */
+    
+    
+    /* 안내창 버튼 */
+
+    .login-wrap .notice button,
+    .notice-box1 .notice button,
+    .notice-box2 .notice button,
+    .resident-form-wrap .notice button,
+    .resident-form-wrap .notice button,
+    .delivery-form-wrap .notice button{
+        width: 100%;
+        padding: 7px 0;
+        color: #fff;
+        background-color: #0E2688;
+        border: none;
+        outline: none;
+        margin: 0 auto;
+        font-size: 15px;
+        border-radius: 50px;
+    }
+
+    /* wrap 공통 값 */
+    
+    .start-wrap,
+    .login-wrap,
+    .join-wrap,
+    .resident-form-wrap,
+    .resident-main-wrap,
+    .info-wrap,
+    .mypage-wrap,
+    .my-info-wrap,
+    .laundary-info,
+    .laundary-message,
+    .find-wrap,
+    .return-wrap,
+    .laundary-storage-wrap,
+    .laundary-pickup-wrap,
+    .delivery-main,
+    .delivery-storage-wrap,
+    .delivery-cancle,
+    .delivery-list-wrap,
+    .delivery-return-wrap
+    .delivery-return-pw-wrap,
+    .laundaryman-find-code-wrap,
+    .laundaryman-find-wrap,
+    .laundary-list-wrap,
+    .laundary-factory-list-wrap,
+    .laundaryman-storage-code-wrap,
+    .laundaryman-storage-wrap,
+    .laundaryman-storage-box,
+    .laundaryman-pickup-wrap,
+    .point-wrap{   
+        height: 100vh;
+        height: var(--app-height, 100vh);
+        position: relative;
+    }
+
+    .start-wrap .start-bg{
+        background: url(../images/start.png) no-repeat center bottom / cover;
+        width: 100%;
+        height: 100vh; 
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 99;
+        transition: all 1s;
+        /* animation: translateY ease-in-out 1.5s 0.8s forwards */
+    }
+    .start-bg.slideUp{
+        transform: translateY(-53%);
+        animation-duration: 1.5s;
+        animation-timing-function: ease-in-out;
+        animation-delay: 0.8s;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+        animation-play-state: running;
+    }
+    /* @keyframes translateY {
+        0%{
+            transform: translateY(0%);
+        }
+        100%{
+            transform: translateY(-50%);
+        }
+    } */
+
+    .start-wrap .btn-wrap{
+        width: 100%;
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+    .start-wrap .btn-wrap p:first-child{
+        font-size: 40px;
+        padding-bottom: 23px;
+        font-family: "payboocBold";
+    }
+    .start-wrap .btn-wrap p:nth-child(2) {
+        font-size: 20px;
+        padding-bottom: 50px;
+
+    }
+    .start-wrap .btn-wrap .btn{
+        width: 50%;
+        background-color: #0E2688;
+        color: #fff;
+        margin: 20px auto;
+        padding: 15px 20px;
+        text-align: center;
+        border-radius: 34px;
+        font-size: 15px;
+    }
+
+    .start-wrap .btn-wrap .btn-login{
+        margin-top: 0;
+    }
+
+    .start-wrap .start-bg h1,
+    .login-wrap .login-title h1{
+        font-family: "payboocBold";
+        font-size: 8vw;
+        padding: 150px 0 0 50px;
+    }
+
+    .start-wrap .start-bg p,
+    .login-wrap .login-title p{
+        font-size: 4vw;
+        padding-left: 56px;
+        font-weight: 400;
+        line-height: 3;
+    }
+    .common-bg {
+        position: fixed;
+        display: none;
+        z-index: 10;
+        width: 100%;
+        min-height: 100%;
+        height: auto;
+    }
+    /* 로그인 */
+
+    .login-wrap .login-txtbox,
+    .join-wrap .join-txtbox{
+        padding-top: 50px;
+    }
+    .login-wrap .login-txtbox h2,
+    .join-wrap .join-txtbox h2{
+        font-size: 23px;
+        text-align: center;
+        padding: 20px 0;
+    }
+    .login-wrap .login-txtbox p,
+    .join-wrap .join-txtbox p{
+        font-size: 15px;
+        text-align: center;
+        line-height: 17px;
+    }
+
+    .login-wrap .btn-wrap{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width: 95%;
+        margin: 10px auto;
+    }
+    .login-wrap .btn-wrap .btn-box{
+        width: 45%;
+    }
+    .login-wrap .btn-wrap .btn-box button{
+        width: 100%;
+        border: 2px solid #0E2688;
+        color: #0E2688;
+        font-size: 16px;
+        outline: none;
+        padding: 12px;
+        border-radius: 12px;
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .join-wrap .btn-wrap{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 95%;
+        margin: 10px auto;
+    }
+    .join-wrap .btn-wrap .btn-box {
+        width: 47%;
+    }
+    .join-wrap .btn-wrap .btn-box button{
+        border: 2px solid #0E2688;
+        color: #0E2688;
+        font-size: 16px;
+        outline: none;
+        padding: 12px;
+        border-radius: 12px;
+        width: 100%;
+        font-size: 15px;
+        font-weight: 600;
+    }
+    .login-wrap .login-box,
+    .join-wrap .join-box{
+        padding: 6vh 0;
+        background: #F4F8FC;
+        border-radius: 35px 35px 0 0;
+        box-shadow: 3px -6px 25px #ddd;
+        margin-top: 40px;
+        height: calc(var(--vh,1vh)*72);
+    }
+    
+    .login-wrap .login-info,
+    .join-wrap .join-info{
+        width: 65%;
+        margin: 0 auto;
+    }
+    .login-wrap .login-info p,
+    .join-wrap .join-info p{
+        font-size: 20px;
+        text-align: center;
+    }
+    .login-wrap .login-input-box,
+    .join-wrap .login-input-box{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-top: 50px;
+        width: 95%;
+        margin: 0 auto;
+    }
+    .phone,
+    .certification{
+        position: relative;
+    }
+    .certification{
+        margin-top: 36px;
+    }
+    .login-wrap .login-input-box > div,
+    .join-wrap .login-input-box > div {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 17px;
+        width: 100%;
+    }
+    
+    .login-input-box label .textbox{
+        width: 100%;
+        border: none;
+        border-bottom: 1px #000 solid;
+        font-size: 15px;
+        padding: 15px 80px 15px 10px;
+        outline: none;
+        margin-top: 10px;
+    }
+
+    .login-input-box label .textbox[type="text"]::placeholder{
+        font-size: 14px;
+    }
+    
+
+    .login-input-box .btn-position{
+        background-color: #0E2688;
+        border: none;
+        outline: none;
+        color: #fff;
+        padding: 11px 15px;
+        font-size: 15px;
+        border-radius: 9px;
+        position: absolute;
+        bottom: 3px;
+        right: 0;
+    }
+    .login-wrap  .resident-popUp,
+    .login-wrap  .delivery-popUp{
+        display: none;
+    }
+    .login-wrap .notice .text-box{
+        text-align: center;
+    }
+    .login-wrap .notice .text-box h2{
+        font-size: 23px;
+        font-weight: bold;
+        padding: 10px 0;
+    }
+    .login-wrap .notice .text-box p{
+        padding: 5px 0 10px 0;
+        line-height: 55px;
+    }
+    .login-wrap .notice .popUp-btn-wrap{
+        width: 40%;
+        margin: 10px auto;
+    }
+
+    /* join - 회원가입 종류선택 */
+
+    .join-wrap .join-txtbox p span{
+        font-size: 14px;
+    }
+    
+
+
+       /* 입주민, 택배기사 회원가입 신청서 */
+    .resident-form-wrap .resident-form-title,
+    .delivery-form-wrap .delivery-form-title{
+        padding: 25px 0;
+    }
+    .resident-form-wrap .resident-form-title h2,
+    .delivery-form-wrap .delivery-form-title h2{
+        font-size: 23px;
+        text-align: center;
+        padding: 20px 0;
+    }
+    .resident-form-wrap .form-wrap,
+    .delivery-form-wrap .form-wrap{ 
+        background-color: #F4F8FC;
+        padding: 30px 0 50px 0;
+        border-radius: 30px 30px 0 0 ;
+    }
+    .resident-form-wrap .form-box,
+    .delivery-form-wrap .form-box{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .resident-form-wrap .form-box > div,
+    .delivery-form-wrap .form-box > div{
+        padding: 15px 0;
+    }
+    .resident-form-wrap .form-box span,
+    .delivery-form-wrap .form-box span{
+        padding: 10px 0;
+    }
+    .resident-form-wrap .form-box input,
+    .delivery-form-wrap .form-box input{
+        width: 100%;
+        padding: 10px 5px;
+        border: none;
+        border-bottom: 1px #000 solid;
+    }
+
+    /* 입주민 회원가입 신청서 - 남녀 성별 선택 */
+    .resident-form-wrap .form-box .resident-gender {
+        display: flex;
+        padding: 10px 0;
+    }
+    .resident-form-wrap .form-box .resident-gender .gender-wrap{
+        width: 40%;
+        margin-left: auto;
+    }
+    .resident-form-wrap .form-box .resident-gender button{
+        width: 43%;
+        margin-right: 10px;
+        border: none;
+        background-color: #0E2688;
+        color: #fff;
+        border-radius: 10px;
+        padding: 10px 5px;
+    }
+    /* 입주민 회원가입 신청서 - 거주동 , 호수 선택 */
+    .resident-form-wrap .form-box .building-wrap{
+        display: flex;
+    }
+    .resident-form-wrap .form-box .building-wrap > div{
+        width: 50%;
+    }
+    .resident-form-wrap .form-box .building-wrap .resident-1{
+        padding-right: 20px;
+    }
+    /* 입주민, 택배기사 회원가입 신청서 - 개인정보 동의 */
+    .resident-form-wrap .personal-info,
+    .delivery-form-wrap .personal-info{
+        width: 60%;
+        margin: 30px auto;
+        text-align: center;
+    }
+    .resident-form-wrap .personal-info .info1,
+    .delivery-form-wrap .personal-info .info1{
+        margin-right: 20px;
+    }
+    .resident-form-wrap .personal-info input,
+    .delivery-form-wrap .personal-info input{
+        margin: 0 5px;
+    }
+    .resident-form-wrap .notice button,
+    .delivery-form-wrap .notice button{
+        width: 40%;
+        margin-top: 22px;
+    }
+    .resident-form-wrap .notice-wrap,
+    .delivery-form-wrap .notice-wrap  {
+        display: none;   
+    }
+    .resident-form-wrap .notice-wrap p,
+    .delivery-form-wrap .notice-wrap p{
+        line-height: 36px;
+    }
+    .resident-form-wrap .notice-wrap p:first-child,
+    .delivery-form-wrap .notice-wrap p:first-child{
+        font-size: 23px;
+        font-weight: bold;
+        padding: 10px 0;
+    }
+    /* 택배기사 - 기사 구분 */
+    .delivery-form-wrap .delivery-division{
+        display: flex;
+        align-items: center;
+    }
+    .delivery-form-wrap .delivery-division-box {
+        margin-left: auto;
+        width: 40%;
+        display: flex;
+        justify-content: space-around;
+    }
+    .delivery-form-wrap .delivery-division button{
+        background-color: #0E2688;
+        color: #fff;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 15px;
+        width: 45%;
+    }
+    .delivery-form-wrap .delivery-text{
+        width: 60%;
+        margin: 0 auto;
+        padding: 15px 0;
+    }
+    .delivery-form-wrap .delivery-text p{
+        text-align: center;
+        line-height: 22px;
+    }
+
+
+
+
+    /* 입주민 메인 페이지 */
+    .resident-main-wrap .swiper-container{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .resident-main-wrap .swiper-slide{
+        width: 100%;
+        height: 35vh;
+        text-indent: -9999px;
+        background-repeat: no-repeat;
+        background-position: 50%;
+        background-size: cover;
+    }
+    .resident-main-wrap .slide1{
+        background-image: url(../images/ad1.jpg);
+    }
+    .resident-main-wrap .slide2{
+        background-image: url(../images/ad2.jpg);
+    }
+    .resident-main-wrap .slide3{
+        background-image: url(../images/ad3.jpg);
+    }
+    .resident-main-wrap .slide4{
+        background-image: url(../images/ad4.jpg);
+    }
+    .resident-main-wrap .menu-container{
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 20px;
+        height: 450px;
+    }
+    .resident-main-wrap .menu-wrap{
+        padding-bottom: 5vh;
+    }
+    .resident-main-wrap .menu-box{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .resident-main-wrap .menu-wrap ul{
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        margin: 0 auto;
+        flex-wrap: wrap;
+    }
+    .resident-main-wrap .menu-wrap .delivery-menu{
+        padding-bottom: 38px;
+        box-shadow: 0 2px #eee;
+    }
+
+    .resident-main-wrap .menu-wrap ul li{
+        background-color:#F4F8FC;
+        border-radius: 50%;
+        position: relative;
+        font-weight: normal;
+    }
+    .resident-main-wrap .menu-wrap ul li:first-child{
+        width: 100%;
+        background-color: transparent;
+        padding: 22px 0 15px 28px;
+        position: relative;
+        font-size: 16px;
+    }
+    .resident-main-wrap .menu-wrap ul li:first-child::before{
+        content: "";
+        width: 28px;
+        height: 31px;
+        background-size: contain;
+        background-position:  50% 50%;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 14px;
+        left: -1%;
+    }
+    .resident-main-wrap .menu-wrap ul li:first-child:after{
+        display: none;
+    }
+    .resident-main-wrap .menu-wrap .delivery-menu li:first-child::before{
+        background-image: url(../images/delivery-menu.png);
+    }
+    .resident-main-wrap .menu-wrap .laundary-menu li:first-child::before{
+        background-image: url(../images/laundary-menu.png);
+    }
+
+    .resident-main-wrap .menu-wrap ul li a{
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 14px;
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
+    .resident-main-wrap .menu-wrap ul li a span{
+        position: absolute;
+        bottom: -20px;
+    }
+    .resident-main-wrap .menu-wrap ul li a::before{
+        content: "";
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: contain;
+        width: 39px;
+        height: 35px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 26px;
+    }
+    .resident-main-wrap .menu-wrap ul li a::after{
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        background-color: #0E2688;
+        border-radius: 50%;
+        top: 0;
+        right: -10px;
+    }
+    .resident-main-wrap .menu-wrap .delivery-menu li .menu-1::before{
+        background-image: url(../images/delivery-1.png);
+        width: 27px;
+        height: 30px;
+    }
+    .resident-main-wrap .menu-wrap .delivery-menu li .menu-2::before{
+        background-image: url(../images/delivery-2.png);
+        width: 46px;
+        height: 43px;
+        top: 16px;
+    }
+    .resident-main-wrap .menu-wrap .delivery-menu li .menu-3::before{
+        background-image: url(../images/delivery-3.png);
+        width: 49px;
+        height: 41px;
+        top: 21px;
+    }
+
+    .resident-main-wrap .menu-wrap .laundary-menu li .menu-1::before{
+        background-image: url(../images/laundary-1.png);
+        height: 44px;
+        top: 16px;
+        width: 46px;
+    }
+    .resident-main-wrap .menu-wrap .laundary-menu li .menu-2::before{
+        background-image: url(../images/laundary-2.png);
+        width: 54px;
+        height: 38px;
+    }
+    .resident-main-wrap .menu-wrap .laundary-menu li .menu-3::before{
+        background-image: url(../images/laundary-3.png);
+        width: 56px;
+        height: 45px;
+        top: 19px;
+    }
+
+    .resident-main-wrap .menu-wrap ul li::after{
+        position: absolute;
+        top: 4px;
+        right: -1px;
+        color: #fff;
+        font-size: 13px;
+    }
+    .resident-main-wrap .menu-wrap .delivery-menu > .menu-1::after{
+        content: "1";
+    }
+    .resident-main-wrap .menu-wrap .delivery-menu > .menu-2::after{
+        content: "2";
+    }
+    .resident-main-wrap .menu-wrap .delivery-menu > .menu-3::after{
+        content: "3";
+    }
+    .resident-main-wrap .menu-wrap .laundary-menu > .menu-1::after{
+        content: "3";
+    }
+    .resident-main-wrap .menu-wrap .laundary-menu > .menu-2::after{
+        content: "2";
+    }
+    .resident-main-wrap .menu-wrap .laundary-menu > .menu-3::after{
+        content: "1";
+    }
+    /* 이용방법 안내 */
+
+    .info-wrap  .info-btn-wrap{
+        width: 80%;
+        margin: 0 auto;
+        height: 85%;
+    }
+    .info-wrap  .info-btn-wrap .btn-box{
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        height: 75vh;
+    }
+    .info-wrap .info-btn-wrap .btn-box .btn{
+        background-color: #F4F8FC;
+        width: 100%;
+        border-radius: 22px;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+    }
+    .info-wrap .info-btn-wrap .btn-box .box2,
+    .info-wrap .info-btn-wrap .btn-box .box4{
+        flex-direction: row-reverse;
+        text-align: right;
+    }
+    .info-wrap .info-btn-wrap .btn-box .btn a{
+        display: block;
+        padding: 57px 30px;
+        width: 100%;
+        font-size: 19px;
+        position: relative;
+        z-index: 9;
+        font-weight: 300;
+    }
+    .info-wrap .info-btn-wrap .btn-box .btn .bg{
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: contain;
+        width: 153px;
+        height: 79px;
+        position: relative;
+        z-index: 9;
+
+    }
+    .info-wrap .info-btn-wrap .btn-box .box1 .bg{
+        margin-left: auto;
+        margin-right: 39px;
+        background-image: url(../images/info-btn1.png);
+    }
+    .info-wrap .info-btn-wrap .btn-box .deco-bg{
+        position: absolute;
+        width: 175px;
+        height: 175px;
+        opacity: 0.5;
+        border-radius: 50%;
+    }
+    .info-wrap .info-btn-wrap .btn-box .box1 .deco-bg{
+        background-color: #d0e6fc;
+        right: -22px;
+        top: -27px;
+    }
+    .info-wrap .info-btn-wrap .btn-box .box2 .bg{
+        margin-right: auto;
+        margin-left: 39px;
+        background-image: url(../images/info-btn2.png);
+    }
+    .info-wrap .info-btn-wrap .btn-box .box2 .deco-bg{
+        background-color: #FFE19F;
+        left: -10px;
+        top: 40px;
+    }
+    .info-wrap .info-btn-wrap .btn-box .box3 .deco-bg{
+        background-color: #d0e6fc;
+        right: -61px;
+        bottom: -68px;
+    }
+    .info-wrap .info-btn-wrap .btn-box .box3 .bg{
+        margin-right: 39px;
+        margin-left: auto;
+        background-image: url(../images/info-btn3.png);
+    }
+    .info-wrap .info-btn-wrap .btn-box .box4 .bg{
+        margin-right: auto;
+        margin-left: 39px;
+        background-image: url(../images/info-btn4.png);
+    }
+    .info-wrap .info-btn-wrap .btn-box .box4 .deco-bg{
+        background-color: #FFE19F;
+        left: -30px;
+        top: -64px;
+    }
+
+    .mypage-wrap .mypage-box{
+        width: 90%;
+        margin: 0 auto;
+        text-transform: capitalize;
+        margin-top: 40px;
+        height: 100%;
+    }
+
+    .mypage-wrap .title-bg{
+        background: url(../images/title-bg.png) no-repeat 50% 50% / contain;
+        width: 90px;
+        height: 90px;
+        margin: 10px auto;
+    }
+    .mypage-wrap .mypage-title{
+        padding: 10px 0;
+    }
+    .mypage-wrap .mypage-title p{
+        font-size: 18px;
+        text-align: center;
+    }
+    .mypage-wrap .edit{
+        padding: 50px 0;
+        padding-bottom: 24px;
+    }
+    .mypage-wrap .edit p{
+        font-size: 17px;
+    }
+    .mypage-wrap .edit p span,
+    .mypage-wrap .point p span{
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .mypage-wrap .edit-btn,
+    .mypage-wrap .point-btn{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding-top: 20px;
+    }
+    .mypage-wrap .point-btn{
+        justify-content: space-between;
+    }
+
+    .mypage-wrap .edit .edit-btn button {
+        border: 2px #0E2688 solid;
+        border-radius: 13px;
+        font-size: 14px;
+        padding: 20px 16px;
+        width: 100%;
+    }
+    .mypage-wrap .point{
+        padding: 30px 0;
+    }
+
+    .mypage-wrap .point .btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .mypage-wrap .point .btn button{
+        background-color: #0E2688;
+        color: #fff;
+        border-radius: 12px;
+        padding: 12px;
+        width: 100%;
+    }
+    .mypage-wrap .point .message-btn{
+        width: 45%;
+        margin: 0 auto;
+        padding-top: 20px;
+        padding-bottom: 120px;
+    }
+    .mypage-wrap .point-box {
+        font-size: 15px;
+        font-weight: 300;
+        display: flex;
+        align-items: center;
+        width: 70%;
+    }
+    .mypage-wrap .point-box p{
+        color: #0E2688;
+        font-weight: bold;
+    }
+    .mypage-wrap .point-box .point-amount{
+        border: none;
+        border-bottom: 1px #000 solid;
+        padding: 12px 5px;
+        letter-spacing: -1.3px;
+        font-weight: 500;
+        width: 56%;
+        position: relative;
+        margin-left: 12px;
+    }
+    .mypage-wrap .point-box .point-amount .amount{ 
+        position: absolute;
+        right: 15px;
+    }
+    .mypage-wrap .point-box .point-amount span{
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+
+    /* 회원정보수정 */
+    .my-info-wrap{
+        position: relative;
+    }
+    .my-info-wrap .my-info-box{
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+    .my-info-wrap .my-info-box .info-text p {
+        text-align: center;
+        font-size: 18px;
+    }
+    .my-info-wrap .text-area{
+        padding: 20px 0 40px 0;
+    }
+    .my-info-wrap .text-area span{
+        width: 20%;
+    }
+    
+    .my-info-wrap .text-area > div{
+        margin-top: 15px;
+    }
+    .my-info-wrap .text-area .adress-num > div{
+        margin-top: 20px;
+    }
+    .my-info-wrap .text-area .resident-gender{
+        display: flex;
+        padding: 10px 0;
+    }
+    .my-info-wrap .text-area .resident-gender .gender-wrap{
+        width: 40%;
+        margin-left: auto;
+    }
+    .my-info-wrap .text-area .resident-gender button{
+        width: 43%;
+        margin-right: 10px;
+        border: none;
+        background-color: #0E2688;
+        color: #fff;
+        border-radius: 10px;
+        padding: 10px 5px;
+    }
+    .my-info-wrap .text-area input{
+        border: none;
+        border-bottom: 1px #000 solid;
+        background-color: #F4F8FC;
+        padding: 10px 5px;
+        width: 79%;
+    }
+    .my-info-wrap .info{
+        display: flex;
+        justify-content: space-around;
+    }
+    .my-info-wrap .my-info-box .info-box{
+        text-align: center;
+        width: 45%;
+    }
+    .my-info-wrap .my-info-box .info-box button{
+        background-color: #0E2688;
+        color: #fff;
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        padding: 12px;
+        font-size: 15px;
+    }
+    .my-info-wrap .correction-btn{
+        padding-top: 50px;
+        padding-bottom: 120px;
+        width: 45%;
+        margin: 0 auto;
+    }
+    .my-info-wrap .correction-btn button{
+        padding: 18px 16px; 
+        width: 100%;
+        border: none;
+        background-color: #0E2688;
+        color: #fff;
+        border-radius: 40px;
+    }
+    .my-info-wrap .info-change1,
+    .my-info-wrap .info-change2{
+        background-color: #F4F8FC;
+        width: 300px;
+        background-color: #F4F8FC;
+        padding: 20px;
+        text-align: center;
+        border-radius: 22px;
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 35%;
+        height: 220px;
+        display:none;
+        z-index: 99;
+    }
+    .my-info-wrap .info-change1 p:first-child,
+    .my-info-wrap .info-change2 p:first-child{
+        font-size: 22px;
+        padding: 10px 0;
+        width: 100%;
+    }
+    .my-info-wrap .info-change1 p:nth-child(2),
+    .my-info-wrap .info-change2 p:nth-child(2){
+        padding: 10px 0;;
+    }
+    .my-info-wrap .info-change1 input,
+    .my-info-wrap .info-change2 input{
+        display: block;
+        margin: 0 auto;
+        padding: 5px;
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+    .my-info-wrap .info-change1 button,
+    .my-info-wrap .info-change2 button{
+        background-color: #0E2688;
+        color: #fff;
+        padding: 7px 0;
+        width: 40%;
+        font-size: 15px;
+        border-radius: 50px;
+        margin-top: 15px;
+    }
+
+    /* 안내버튼 */
+    .notice-box1 .notice,
+    .notice-box2 .notice{
+        width: 300px;
+        background-color: #F4F8FC;
+        padding: 20px;
+        text-align: center;
+        border-radius: 22px;
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 35%;
+        height: 190px;
+        display: none;
+        z-index: 99;
+    }
+
+    .notice-box2 .notice{
+        padding: 40px 0px;
+    }
+    .notice-box1 .notice p{
+        line-height: 20px;
+    }
+    .notice-box2 .notice p{
+        line-height: 20px;
+        padding-top: 10px;
+    }
+    .notice-box1 .notice p:first-child,
+    .notice-box2 .notice p:first-child{
+        font-size: 23px;
+        font-weight: bold;
+        padding: 10px 0;
+    }
+    .notice-box1 .notice button{
+        width: 40%;
+        margin: 0 5px;
+    }
+    .notice-box2 .notice-btn{
+        padding-top: 15px;
+        width: 40%;
+        margin: 0 auto;
+    }
+    .notice-box1 .notice-btn{
+        width: 100%;
+        margin: 10px auto;
+    }
+    /* 택배 찾기 , 세탁 찾기 */
+    .find-wrap {
+        position: relative;
+    }
+    .find-wrap .delivery-find .find-box,
+    .find-wrap .laundary-find .find-box{
+        text-align: center;
+        padding-top: 15px;
+    }
+    .find-wrap .delivery-find .find-box p,
+    .find-wrap .laundary-find .find-box p{
+        padding: 5px 0;
+    }
+    .find-wrap .delivery-find .title-bg,
+    .find-wrap .laundary-find .title-bg{
+        width: 90px;
+        height: 90px;
+        margin: 0 auto;
+        background-position: 50% 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    .find-wrap .delivery-find .title-bg{
+        background-image: url(../images/find-title-bg.png);
+    }
+    .find-wrap .laundary-find .title-bg{
+        background-image: url(../images/find-title-bg1.png);
+    }
+    .find-wrap .laundary-find {
+        padding-bottom: 120px;
+    }
+    .find-wrap .find-textbox,
+    .find-wrap .find-textbox{
+        width: 83%;
+        margin: 0 auto;
+        padding: 10px 0;
+    }
+    .find-wrap .laundary-find .find-textbox .laundary-memo{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .find-wrap .laundary-find .find-textbox .laundary-memo textarea{
+        background-color: #F4F8FC;
+        width: 76%;
+        padding: 5px;
+    }
+    .find-wrap .find-textbox span{
+        width: 20%;
+    }
+    .find-wrap .find-textbox > div{
+        margin-top: 15px;
+    }
+    .find-wrap .find-textbox input{
+        width: 75%;
+        padding: 10px 5px;
+        border: none;
+        border-bottom: 1px #000 solid;
+        background-color: #F4F8FC;
+    }
+    .find-wrap .find-btn,
+    .find-wrap .home-btn{
+        text-align: center;
+        padding-top: 20px;
+    }
+    .find-wrap .find-btn {
+        padding-top: 30px;
+    }
+    .find-wrap .home-btn{
+        padding-bottom: 120px;
+    }
+    .find-wrap .find-btn button,
+    .find-wrap .home-btn button{
+        padding: 12px;
+        width: 50%;
+        border: none;
+        background-color: #0E2688;
+        color: #fff;
+        border-radius: 12px;
+    }
+    .find-wrap .notice-find,
+    .find-wrap .notice-incorrect,
+    .find-wrap .notice-wrap .notice1,
+    .find-wrap .notice-wrap .notice2{
+        width: 300px;
+        height: 190px;
+        text-align: center;
+        background-color: #F4F8FC;
+        padding: 20px;
+        border-radius: 22px;
+        position: fixed;
+        top: 35%;
+        left: 50%;
+        z-index: 99;
+        transform: translateX(-50%);
+        display: none;
+    }
+    
+    .find-wrap .notice-find p:first-child,
+    .find-wrap .notice-incorrect p:first-child,
+    .find-wrap .notice-wrap .notice1 p:first-child,
+    .find-wrap .notice-wrap .notice2 p:first-child{
+        font-size: 23px;
+        font-weight: bold;
+        padding: 10px 0;
+    }
+    .find-wrap .notice-find p,
+    .find-wrap .notice-incorrect p,
+    .find-wrap .notice-wrap .notice1 p:nth-child(2),
+    .find-wrap .notice-wrap .notice2 p:nth-child(2){
+        line-height: 40px;
+    }
+    .find-wrap .notice-btn button{
+        width: 40%;
+        padding: 7px 0;
+        color: #fff;
+        background-color: #0E2688;
+        border: none;
+        outline: none;
+        font-size: 15px;
+        margin-top: 15px;
+        border-radius: 50px;
+    }
+    .find-wrap .delivery-home{
+        background: #F4F8FC;
+        width: 85%;
+        margin: 0 auto;
+        position: fixed;
+        z-index: 99;
+        top: 30%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 240px;
+        text-align: center;
+        padding: 20px;
+        border-radius: 24px;
+        display: none;
+    }
+    .find-wrap .delivery-home .home-text p{
+        line-height: 20px;
+    }
+    .find-wrap .delivery-home .home-text p:first-child{
+        font-size: 23px;
+        font-weight: bold;
+        padding: 10px 0;
+    }
+    .find-wrap .delivery-home .home-pw{
+        margin-top: 15px;
+    }
+    .find-wrap .delivery-home .home-pw input{
+        padding: 10px 5px;
+        width: 50%;
+    }
+    .find-wrap .delivery-home .btn{
+        margin-top: 20px;
+    }
+    .find-wrap .delivery-home .btn button{
+        padding: 12px;
+        border: none;
+        background-color: #0E2688;
+        color: #fff;
+        border-radius: 12px;
+        width: 23%;
+        margin: 0 5px;
+    }
+    /* 물품보관 */
+
+    .select_boxes{
+        height: 100vh;
+        padding: 0 0 50px 0;
+        box-sizing: border-box;
+        position: relative;
+        left: 0;
+    }
+
+    .select_box{
+        height: 85%;
+        width: 95%;
+        margin: 0 auto;
+        display: flex;
+        position: relative;
+        transition: 0.4s;
+        overflow-y: scroll;
+    }
+
+    .select_box_show{
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        position: relative;
+        left: 0;
+        transition: 0.4s;
+
+    }
+    .select_box_list{
+        width: 20%;
+        box-sizing: border-box;
+    }
+    .select_box_num{
+        border: 1px solid rgba(0,0,0,0.8);
+        text-align: center;
+        box-sizing: border-box;
+        
+    }
+    .select_box_num>span{
+        padding-top: 10px;
+        display: inline-block;
+        font-size: 16px;
+    }
+    .select_box_special span{
+        font-size: 16px;
+    }
+
+    .select_box_special ul li:nth-child(2){}
+    .select_box_special ul li:nth-child(3){}
+    .select_box_special ul li:nth-child(4){}
+    .select_box_list:nth-of-type(1) .select_box_num:nth-of-type(1){height: 20%;}
+    .select_box_list:nth-of-type(1) .select_box_num:nth-of-type(2){height: 30%;}
+    .select_box_list:nth-of-type(1) .select_box_num:nth-of-type(3){height: 10%;}
+    .select_box_list:nth-of-type(1) .select_box_num:nth-of-type(4){height: 10%;}
+    .select_box_list:nth-of-type(1) .select_box_num:nth-of-type(5){height: 30%;}
+    .select_box_list:nth-of-type(2) .select_box_num:nth-of-type(1){height: 30%;}
+    .select_box_list:nth-of-type(2) .select_box_num:nth-of-type(2){height: 10%;}
+    .select_box_list:nth-of-type(2) .select_box_num:nth-of-type(3){height: 10%;}
+    .select_box_list:nth-of-type(2) .select_box_num:nth-of-type(4){height: 10%;}
+    .select_box_list:nth-of-type(2) .select_box_num:nth-of-type(5){height: 10%;}
+    .select_box_list:nth-of-type(2) .select_box_num:nth-of-type(6){height: 30%;}
+    .select_box_list:nth-of-type(3) .select_box_num:nth-of-type(1){height: 30%;}
+    .select_box_list:nth-of-type(3) .select_box_num:nth-of-type(2){height: 10%;}
+    .select_box_list:nth-of-type(3) .select_box_num:nth-of-type(3){height: 10%;}
+    .select_box_list:nth-of-type(3) .select_box_num:nth-of-type(4){height: 10%;}
+    .select_box_list:nth-of-type(3) .select_box_num:nth-of-type(5){height: 10%;}
+    .select_box_list:nth-of-type(3) .select_box_num:nth-of-type(6){height: 30%;}
+    .select_box_list:nth-of-type(4) .select_box_num:nth-of-type(1){height: 30%;}
+    .select_box_list:nth-of-type(4) .select_box_num:nth-of-type(2){height: 10%;}
+    .select_box_list:nth-of-type(4) .select_box_num:nth-of-type(3){height: 10%;}
+    .select_box_list:nth-of-type(4) .select_box_num:nth-of-type(4){height: 10%;}
+    .select_box_list:nth-of-type(4) .select_box_num:nth-of-type(5){height: 10%;}
+    .select_box_list:nth-of-type(4) .select_box_num:nth-of-type(6){height: 30%;}
+    .select_box_list:nth-of-type(5) .select_box_num:nth-of-type(1){height: 30%;}
+    .select_box_list:nth-of-type(5) .select_box_num:nth-of-type(2){height: 10%;}
+    .select_box_list:nth-of-type(5) .select_box_num:nth-of-type(3){height: 10%;}
+    .select_box_list:nth-of-type(5) .select_box_num:nth-of-type(4){height: 10%;}
+    .select_box_list:nth-of-type(5) .select_box_num:nth-of-type(5){height: 10%;}
+    .select_box_list:nth-of-type(5) .select_box_num:nth-of-type(6){height: 30%;}
+
+    .select_box_list:nth-of-type(6) .select_box_num:nth-of-type(1){height: 30%;}
+    .select_box_list:nth-of-type(6) .select_box_num:nth-of-type(2){height: 10%;}
+    .select_box_list:nth-of-type(6) .select_box_num:nth-of-type(3){height: 10%;}
+    .select_box_list:nth-of-type(6) .select_box_num:nth-of-type(4){height: 10%;}
+    .select_box_list:nth-of-type(6) .select_box_num:nth-of-type(5){height: 10%;}
+    .select_box_list:nth-of-type(6) .select_box_num:nth-of-type(6){height: 30%;}
+
+    .select_box_list:nth-of-type(7) .select_box_num:nth-of-type(1){height: 30%;}
+    .select_box_list:nth-of-type(7) .select_box_num:nth-of-type(2){height: 10%;}
+    .select_box_list:nth-of-type(7) .select_box_num:nth-of-type(3){height: 10%;}
+    .select_box_list:nth-of-type(7) .select_box_num:nth-of-type(4){height: 10%;}
+    .select_box_list:nth-of-type(7) .select_box_num:nth-of-type(5){height: 10%;}
+    .select_box_list:nth-of-type(7) .select_box_num:nth-of-type(6){height: 30%;}
+
+    .select_box_list:nth-of-type(8) .select_box_num:nth-of-type(1){height: 30%;}
+    .select_box_list:nth-of-type(8) .select_box_num:nth-of-type(2){height: 10%;}
+    .select_box_list:nth-of-type(8) .select_box_num:nth-of-type(3){height: 10%;}
+    .select_box_list:nth-of-type(8) .select_box_num:nth-of-type(4){height: 10%;}
+    .select_box_list:nth-of-type(8) .select_box_num:nth-of-type(5){height: 10%;}
+    .select_box_list:nth-of-type(8) .select_box_num:nth-of-type(6){height: 30%;}
+
+
+
+    .select_box_list:nth-of-type(9) .select_box_num:nth-of-type(1){height: 25%;}
+    .select_box_list:nth-of-type(9) .select_box_num:nth-of-type(2){height: 25%;}
+    .select_box_list:nth-of-type(9) .select_box_num:nth-of-type(3){height: 25%;}
+    .select_box_list:nth-of-type(9) .select_box_num:nth-of-type(4){height: 25%;}
+    .select_box_special ul{
+        display: flex;    
+        height: 100%;
+    }
+    .select_box_special li{
+        width: 25%;
+        height: 100%;
+        border: 1px solid rgba(0,0,0,0.8);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .box_select, .post_select{
+        background-color: rgb(224, 180, 56);
+        color: #fff;
+    }
+    .not_select{
+        background-color: #333;
+        color: #fff;
+    }
+    .box_select.selected, .post_select.selected{
+        background-color: rgb(224, 81, 56);
+        color: #fff;
+    }
+    .selected{
+        position: relative;
+    }
+    .selected::after{
+        content: "사용중";
+        font-size: 14px;
+        margin-top: 5px;
+        display: block
+    }
+    .ordinary_box.choice, .post_select.choice, .extra_variable{
+        background-color: rgb(56, 129, 224);
+        color: #fff;
+    }
+
+
+    /* 택배기사 가변함보관 */
+    .variable_cabinet_notice_box{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 99999999999;
+        display: none;
+    }
+    .variable_cabinet_notice_box.active{
+        display: block;
+    }
+    .variable_cabinet_notice_box .notice_box{
+        width: 700px;
+        padding-bottom: 50px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #f5f5f5;
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    }
+    .notice_box_title{
+        text-align: center;
+        padding: 20px ;
+        font-size: 30px;
+        background-color: #343a40;
+        color: #fff;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .notice_box_text{
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 30px;
+        line-height: 1.5;
+        font-size: 30px;
+        width: 80%;
+        
+    }
+    .notice_box_text p{
+        white-space: pre-line;
+    }
+    .notice_button_box{
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+    .notice_button_list{
+        display: flex;
+        justify-content: space-between;
+    }
+    .notice_button_list button{
+        padding: 10px 30px;
+        background-color: #343a40;
+        color: #fff;
+        line-height: 1.5;
+        font-size: 25px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    }
+    .variable_cabinet_notice_box_re, .ordinary_cabinet_notice_box{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 99999999999;
+        display: none;
+    }
+    .variable_cabinet_notice_box_re.active, .ordinary_cabinet_notice_box.active{
+        display: block;
+    }
+    .variable_cabinet_notice_box_re .notice_box, .ordinary_cabinet_notice_box .notice_box{
+        width: 700px;
+        height: 300px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #f5f5f5;
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    }
+    .select_boxes .notice{
+        padding: 15px 20px;
+        display: none;
+    }
+    .select_boxes .notice-box p{
+        line-height: 18px;
+        font-size: 15px;
+    }
+    .select_boxes .notice-box p:first-child{
+        font-size: 23px;
+        font-weight: bold;
+        padding: 10px 0;
+    }
+    .select_boxes .notice-box p:nth-child(2){
+        color: red;
+    }
+    .select_boxes .notice-btn{
+        width: 100%;
+    }
+
+    .select_boxes .notice-box button{
+        width: 40%;
+        padding: 9px 0;
+        color: #fff;
+        background-color: #0E2688;
+        border: none;
+        outline: none;
+        font-size: 15px;
+        margin-top: 10px;
+        border-radius: 50px;
+    }
+    .select_boxes .notice-box .btn1{
+        margin-right: 5px;
+    }
+    .select_boxes .notice-box .btn2{
+        margin-left: 5px;
+    }
+    .select_boxes .notice1{
+        display: none;
+    }
+    .select_boxes .notice1 p {
+        line-height: 35px;
+    }
+    .select_boxes .notice1 p:nth-child(2){
+        color: #000;
+    }
+    .select_boxes .textbox{
+        display: flex;
+        justify-content: center;
+        width: 75%;
+        margin: 0 auto;
+        justify-content: space-around;
+    }
+    .select_boxes .textbox p{
+        line-height: 50px;
+    }
+    .select_boxes .textbox .bg{
+        background: url(../images/arrow-right.png) no-repeat 50% 50% / contain;
+        width: 44px;
+        height: 50px;
+    }
+    .return-wrap{}
+    .return-wrap .return-pw-box{
+        padding-top: 80px;
+        width: 90%;
+        margin: 0 auto;
+    }
+    .return-wrap .return-pw-box > p{
+        text-align: center;
+        font-size: 22px;
+    }
+    .return-wrap .return-pw-box .password{
+        padding-top: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        width: 90%;
+        margin: 0 auto;
+    }
+    .return-wrap .return-pw-box .password p{
+        width: 100%;
+        font-size: 18px;
+    }
+    .return-wrap .return-pw-box .password .pwBox{
+        width: 75%;
+        margin: 20px auto;
+    }
+    .return-wrap .return-pw-box .password input{
+        width: 100%;
+        border: none;
+        border-bottom: 1px #000 solid;
+        padding:10px 5px;
+        margin: 10px 0;
+        background-color: #F4F8FC;
+    }
+    .return-wrap .return-btn{
+        text-align: center;
+        padding-top: 60px;
+        padding-bottom: 50px;
+    }
+    .return-wrap .return-btn button{
+        background-color: #0E2688;
+        color: #fff;
+        padding: 12px;
+        width: 50%;
+        border-radius: 12px;
+    }
+
+    /* 세탁함 이용내역 조회 */
+    .laundary-info {
+        
+    }
+    .laundary-info .info-table,
+    .laundary-message .info-table{
+        padding-top: 50px;
+    }
+    .laundary-info .info-title,
+    .laundary-message .info-title{
+        display: flex;
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .laundary-info .laundary-bg{
+        background: url(../images/laundary-bg.png) no-repeat 50% 50% / contain;
+        width: 80px;
+        height: 80px;
+    }
+    .laundary-message .laundary-bg{
+        background: url(../images/laundary-msg.png) no-repeat 50% 50% / contain;
+        width: 80px;
+        height: 80px
+    }
+    .laundary-info .info-title p,
+    .laundary-message .info-title p {
+        font-size: 18px;
+        text-align: center;
+        width: 100%;
+        padding-top: 10px;
+    }
+    .laundary-info .info-table .table-wrap,
+    .laundary-message .info-table .table-wrap{
+        padding-top: 30px;
+    }
+    .laundary-info .info-table .table-wrap table,
+    .laundary-message .info-table .table-wrap table{
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .laundary-info .info-table .table-wrap table th,
+    .laundary-message .info-table .table-wrap table th{
+        background-color: #F4F8FC;
+        padding: 10px 5px;
+        font-size: 15px;
+    }
+    .laundary-info .info-table .table-wrap table th span{
+        font-size: 12px;
+    }
+    .laundary-info .info-table .table-wrap table td,
+    .laundary-message .info-table .table-wrap table td{
+        padding: 15px 5px;
+        font-size: 14px;
+        border-bottom: 1px #0E2688 solid;
+    }
+    .laundary-info .info-table .table-wrap table td:nth-child(1) {
+        width: 21%;
+    }
+    .laundary-info .info-table .table-wrap table td:nth-child(2){
+        width: 10%;
+    }
+    .laundary-info .info-table .table-wrap table td:nth-child(3) {
+        width: 30%;
+    }
+    .laundary-info .info-table .table-wrap table td:nth-child(4) {
+        width: 17%;
+    }
+    .laundary-info .info-table .table-wrap table td:nth-child(5) {
+        width: 16%;
+    }
+    .laundary-message .info-table .table-wrap table td:nth-child(1){
+        width: 20%;
+    }
+    /*  세탁 보관 */
+    .laundary-storage-wrap .storage-box{
+        text-align: center;
+        padding-top: 15px;
+    }
+    .laundary-storage-wrap .storage-box .title-bg{
+        background: url(../images/storage-bg.png) no-repeat 50% 50% / contain;
+        width: 90px;
+        height: 90px;
+        margin: 0 auto;
+    }
+    .laundary-storage-wrap .storage-box p{
+        padding: 5px 0;
+    }
+    .laundary-storage-wrap .laundary-storage-info{
+        width: 83%;
+        margin: 0 auto;
+        padding: 10px 0;
+    }
+    .laundary-storage-wrap .laundary-storage-info p{
+        padding: 15px 0;
+        font-size: 17px;
+        text-align: center;
+        font-weight: bold;
+    }
+    .laundary-storage-wrap .laundary-storage-info > div{
+        margin-top: 15px;
+    }
+    .laundary-storage-wrap .laundary-storage-info span{
+        width: 20%;
+    }
+    .laundary-storage-wrap .laundary-storage-info input{
+        width: 75%;
+        padding: 10px 5px;
+        border: none;
+        border-bottom: 1px #000 solid;
+        background-color: #F4F8FC;
+    }
+    .laundary-storage-wrap .laundary-storage-info .laundary-amount > div{
+        margin-top: 15px;
+    }
+    .laundary-storage-wrap .laundary-storage-info .laundary-memo{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .laundary-storage-wrap .laundary-storage-info #name{
+        width: 75%;
+        padding: 12px 5px;
+        font-size: 15px;
+    }
+    .laundary-storage-wrap .laundary-storage-info .laundary-memo textarea{
+        background-color: #F4F8FC;
+        width: 76%;
+        padding: 5px;
+    }
+    .laundary-storage-wrap .laundary-btn{
+        padding-top: 30px;
+        text-align: center;
+        padding-bottom: 120px;
+    }
+    .laundary-storage-wrap  .laundary-btn > div{
+        margin-top: 15px;
+    }
+    .laundary-storage-wrap button{
+        padding: 12px;
+        width: 50%;
+        border: none;
+        background-color: #0E2688;
+        color: #fff;
+        border-radius: 12px;
+    }
+    /* 수거요청 */
+    .laundary-pickup-wrap .pickup-box {
+        text-align: center;
+        padding-top: 15px;
+    }
+    .laundary-pickup-wrap .pickup-box .title-bg{
+        background:url(../images/pickup-bg.png) no-repeat 50% 50% / contain;
+        width: 90px;
+        height: 90px;
+        margin: 0 auto;
+    }
+    .laundary-pickup-wrap .pickup-box .title-box p{
+
+    }
+    .laundary-pickup-wrap .laundary-btn button{
+        padding: 12px;
+        width: 50%;
+        border: none;
+        background-color: #0E2688;
+        color: #fff;
+        border-radius: 12px;
+        margin-top: 15px;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info{
+        width: 83%;
+        margin: 0 auto;
+        padding: 10px 0;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info > div{
+        margin-top: 15px;
+    }
+
+    .laundary-pickup-wrap .laundary-pickup-info > div span{
+        width: 20%;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info #name{
+        width: 75%;
+        padding: 12px 5px;
+        font-size: 15px;
+        background-color: #F4F8FC;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info #name option span{
+        font-size: 14px;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info input{
+        width: 75%;
+        padding: 10px 5px;
+        border: none;
+        border-bottom: 1px #000 solid;
+        background-color: #F4F8FC;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info {
+        height: 100%;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info > div,
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-amount > div{
+        margin-top: 15px;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info .info-text p{
+        padding: 32px 0 7px 30px;
+        font-size: 17px;
+        text-align: left;
+        font-weight: bold;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info .laundary-memo{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info .laundary-memo textarea{
+        width: 76%;
+        background-color: #F4F8FC;
+        padding: 5px;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info .date-box{
+        margin-top: 15px;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info .date-box .date{
+        display: flex;
+        flex-wrap:wrap;
+        padding: 20px 0 40px 0;
+        border-radius: 12px;
+        justify-content: center;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info .date-box .date span{
+        width: 100%;
+        padding: 15px 0;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info .date-box .date .datetext {
+        text-align: center;
+        font-size: 15px;
+        color: red;
+        font-weight: 600;
+        line-height: 5px;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info .date-box .date .datetext span{
+        width: auto;
+        margin-right: 5px;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info .date-box .date label{
+        width: 83%;
+        display: flex;
+        justify-content: space-around;
+        margin: 10px auto;
+    }
+
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info .date-box .date label input{
+        width: 45%;
+        border: none;
+        background-color: #F4F8FC;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info .date-box .date label .timeSelect{
+        text-align: center;
+        letter-spacing: 2.5px;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info .date-box .place{
+        display: flex;
+        flex-wrap:wrap;
+        border-radius: 12px;
+        margin-top: 20px;
+        justify-content: center;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info .date-box .place span{
+        width: 100%;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info .date-box .place select{
+        margin-top: 20px;
+        width: 70%;
+        padding: 10px;
+        background-color: #F4F8FC;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info .date-box .place select option{
+        font-size: 14px;
+    }
+    .laundary-pickup-wrap .laundary-btn{
+        padding-top: 30px;
+        text-align: center;
+        padding-bottom: 120px;
+    }
+
+    .laundary-pickup-wrap .notice-wrap{
+        width: 300px;
+        height: 190px;
+        text-align: center;
+        background-color: #F4F8FC;
+        padding: 20px;
+        border-radius: 22px;
+        position: fixed;
+        top: 35%;
+        left: 50%;
+        transform: translateX(-50%);
+        display: none;
+        z-index: 99;
+    }
+    .laundary-pickup-wrap .notice-wrap p:first-child{
+        font-size: 23px;
+        font-weight: bold;
+        padding: 10px 0;
+    }
+    .laundary-pickup-wrap .notice-wrap p:nth-child(2){
+        line-height: 40px;  
+    }
+    .laundary-pickup-wrap .notice-wrap .notice-btn button{
+        width: 40%;
+        padding: 7px 0;
+        color: #fff;
+        background-color: #0E2688;
+        border: none;
+        outline: none;
+        font-size: 15px;
+        margin-top: 15px;
+        border-radius: 50px;
+    }
+
+        /* 택배기사 메인 */
+    .delivery-main-wrap .swiper-container{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .delivery-main-wrap .swiper-slide{
+        width: 100%;
+        height: 35vh;
+        text-indent: -9999px;
+        background-repeat: no-repeat;
+        background-position: 50%;
+        background-size: cover;
+    }
+    .delivery-main-wrap .slide1{
+        background-image: url(../images/ad1.jpg);
+    }
+    .delivery-main-wrap .slide2{
+        background-image: url(../images/ad2.jpg);
+    }
+    .delivery-main-wrap .slide3{
+        background-image: url(../images/ad3.jpg);
+    }
+    .delivery-main-wrap .slide4{
+        background-image: url(../images/ad4.jpg);
+    }
+
+    .delivery-main-wrap .menu-container {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 20px;
+        height: 450px;
+    }
+    .delivery-main-wrap .menu-wrap{
+        padding-bottom: 5vh;
+    }
+    .delivery-main-wrap .menu-box{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .delivery-main-wrap .menu-wrap ul{
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        margin: 0 auto;
+        flex-wrap: wrap;
+    }
+
+    .delivery-main-wrap .menu-wrap .delivery-menu{
+        padding-bottom: 38px;
+        box-shadow: 0 2px #eee;
+    }
+
+    .delivery-main-wrap .menu-wrap ul li{
+        background-color:#F4F8FC;
+        border-radius: 50%;
+        position: relative;
+        font-weight: normal;
+    }
+    .delivery-main-wrap .menu-wrap ul li:first-child{
+        width: 100%;
+        background-color: transparent;
+        padding: 22px 0 15px 28px;
+        position: relative;
+        font-size: 16px;
+    }
+    .delivery-main-wrap .menu-wrap ul li:first-child::before{
+        content: "";
+        width: 28px;
+        height: 31px;
+        background-size: contain;
+        background-position:  50% 50%;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 14px;
+        left: -1%;
+    }
+    .delivery-main-wrap .menu-wrap ul li:first-child:after{
+        display: none;
+    }
+    .delivery-main-wrap .menu-wrap .delivery-menu li:first-child::before{
+        background-image: url(../images/delivery-menu.png);
+    }
+    .delivery-main-wrap .menu-wrap .laundary-menu li:first-child::before{
+        background-image: url(../images/laundary-menu.png);
+    }
+
+    .delivery-main-wrap .menu-wrap ul li a{
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 14px;
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
+    .delivery-main-wrap .menu-wrap ul li a span{
+        position: absolute;
+        bottom: -20px;
+    }
+
+    .delivery-main-wrap .menu-wrap ul li a::before{
+        content: "";
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: contain;
+        width: 39px;
+        height: 35px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 26px;
+    }
+    .delivery-main-wrap .menu-wrap ul li a::after{
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        background-color: #0E2688;
+        border-radius: 50%;
+        top: 0;
+        right: -10px;
+    }
+    .delivery-main-wrap .menu-wrap .delivery-menu .menu-2 a::after{
+        display: none;
+    }
+    .delivery-main-wrap .menu-wrap .delivery-menu li .menu-1::before{
+        background-image: url(../images/delivery-1.png);
+        width: 27px;
+        height: 30px;
+    }
+    .delivery-main-wrap .menu-wrap .delivery-menu li .menu-2::before{
+        background-image: url(../images/cancle.png);
+        width: 46px;
+        height: 43px;
+        top: 23px;
+    }
+    .delivery-main-wrap .menu-wrap .delivery-menu li .menu-3::before{
+        background-image: url(../images/delivery-3.png);
+        width: 49px;
+        height: 41px;
+        top: 21px;
+    }
+
+    .delivery-main-wrap .menu-wrap .laundary-menu li .menu-1::before{
+        background-image: url(../images/laundary-1.png);
+        height: 44px;
+        top: 16px;
+        width: 46px;
+    }
+    .delivery-main-wrap .menu-wrap .laundary-menu li .menu-2::before{
+        background-image: url(../images/laundary-2.png);
+        width: 54px;
+        height: 38px;
+    }
+    .delivery-main-wrap .menu-wrap .laundary-menu li .menu-3::before{
+        background-image: url(../images/laundary-3.png);
+        width: 56px;
+        height: 45px;
+        top: 19px;
+    }
+
+    .delivery-main-wrap .menu-wrap ul li::after{
+        position: absolute;
+        top: 4px;
+        right: -1px;
+        color: #fff;
+        font-size: 13px;
+    }
+    .delivery-main-wrap .menu-wrap .delivery-menu > .menu-1::after{
+        content: "1";
+    }
+    /* .delivery-main-wrap .menu-wrap .delivery-menu > .menu-2::after{
+        content: "2";
+    } */
+    .delivery-main-wrap .menu-wrap .delivery-menu > .menu-3::after{
+        content: "3";
+    }
+    .delivery-main-wrap .menu-wrap .laundary-menu > .menu-1::after{
+        content: "3";
+    }
+    .delivery-main-wrap .menu-wrap .laundary-menu > .menu-2::after{
+        content: "2";
+    }
+    .delivery-main-wrap .menu-wrap .laundary-menu > .menu-3::after{
+        content: "1";
+    }
+
+    /* 택배기사 - 택배보관 */
+
+    .delivery-storage-wrap .delivery-storage-box{
+        text-align: center;
+        padding-top: 15px;
+    }
+    .delivery-storage-wrap .delivery-storage-box .title-bg{
+        background: url(../images/find-title-bg.png) no-repeat 50% 50% / contain;
+        width: 90px;
+        height: 90px;
+        margin: 0 auto;
+    }
+    .delivery-storage-wrap .delivery-storage-box .title-box p{
+        padding: 5px 0;
+    }
+
+    .delivery-storage-wrap .storage-box {
+        width: 83%;
+        margin: 0 auto;
+        padding: 10px 0;
+    }
+    .delivery-storage-wrap .storage-box > div{
+        margin-top: 20px;
+    }
+    .delivery-storage-wrap .storage-box input{
+        width: 75%;
+        padding: 10px 5px;
+        border: none;
+        border-bottom: 1px #000 solid;
+        background-color: #F4F8FC;
+    }
+
+    .delivery-storage-wrap .storage-box .code-box span{
+        width: 20%;
+    }
+    .delivery-storage-wrap .storage-box .phone-num {
+        display: flex;
+        justify-content: space-around;
+    }
+    .delivery-storage-wrap .storage-box .phone-num input{
+        padding: 9px 5px;
+        width: 75%;
+    }
+    .delivery-storage-wrap .storage-box .num-box .user-num{
+        display: flex;
+        justify-content: space-around;
+    }
+    .delivery-storage-wrap .storage-box .num-box .user-num select{
+        width: 37%;
+        padding: 8px 5px;
+
+    }
+    .delivery-storage-wrap .storage-box .num-box .user-num select option{
+        font-size: 15px;
+    }
+
+    .delivery-storage-wrap .storage-box .num-box .user-num .num-btn button,
+    .delivery-storage-wrap .storage-box .phone-num button{ 
+        background-color: #0E2688;
+        color: #fff;
+        padding: 11px 24px;
+        border-radius: 12px;
+    }
+    .delivery-storage-wrap .storage-box .search-box{
+        text-align: left;
+    }
+    .delivery-storage-wrap .storage-box .search-box .search-info1{
+        margin: 45px 0 20px 0;
+    }
+
+    .delivery-storage-wrap .storage-box .search-box .text-box p:first-child{
+        background-color: #F4F8FC;
+        padding: 15px 10px;
+        font-size: 17px;
+        font-weight: 600;
+    }
+    .delivery-storage-wrap .storage-box .search-box .text-box p{
+        padding: 10px;
+    }
+    .delivery-storage-wrap .delivery-storage-btn{
+        text-align: center;
+        padding-top: 30px;
+        padding-bottom: 120px;
+    }
+    .delivery-storage-wrap .delivery-storage-btn button{
+        padding: 12px;
+        width: 50%;
+        border: none;
+        background-color: #0E2688;
+        color: #fff;
+        border-radius: 12px;
+    }
+    .delivery-storage-wrap .payee{
+        background-color: #F4F8FC;
+        position: absolute;
+        text-align: center;
+        padding: 20px;
+        border-radius: 22px;
+        position: fixed;
+        top: 35%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 65%;
+        height: 300px;
+        display: none;
+        z-index: 999;
+    }
+    .delivery-storage-wrap .payee p:first-child{
+        font-size: 23px;
+        font-weight: bold;
+        padding: 10px 0;
+    }
+    .delivery-storage-wrap .payee p:nth-child(2){
+        padding: 10px 0;
+    }
+    .delivery-storage-wrap .payee .payee-list{
+        background-color: #fff;
+        padding: 15px 0;
+        overflow-y: scroll;
+        height: 120px;
+        margin-top: 10px;
+    }
+    .delivery-storage-wrap .payee .payee-list > div{
+        padding: 10px 0;
+        font-size: 17px;
+    }
+    .delivery-storage-wrap .payee .payee-list > div .name{
+        width: 20%;
+    }
+    /* .delivery-storage-wrap .payee .payee-list > div input{
+        width: 18px;
+        height: 18px;
+        vertical-align: middle;
+    } */
+    /* .delivery-storage-wrap .payee .payee-list input[type="radio"]:checked{
+    } */
+
+    .delivery-storage-wrap .payee-phone-num{
+        background-color: #F4F8FC;
+        position: fixed;
+        text-align: center;
+        padding: 20px;
+        border-radius: 22px;
+        top: 35%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 300px;
+        height: 230px;
+        display: none;
+    }
+    .delivery-storage-wrap .payee-phone-num p:first-child{
+        font-size: 23px;
+        font-weight: bold;
+        padding: 10px 0;
+    }
+    .delivery-storage-wrap .payee-phone-num p:nth-child(2){
+        color: red;
+        padding: 3px 0;
+    }
+    .delivery-storage-wrap .payee-phone-num p:nth-child(3){
+        line-height: 20px;
+    }
+    .delivery-storage-wrap .payee-phone-num .search-box .search{
+        display: flex;
+        justify-content: space-around;
+        padding-top: 10px;
+    }
+    .delivery-storage-wrap .payee-phone-num .search-box .search input{
+        padding: 7px 10px;
+        font-size: 15px
+    }
+    /* .delivery-storage-wrap .payee-phone-num .search-box .search .search-btn{
+        width: 25%;
+    } */
+    .delivery-storage-wrap .payee-phone-num .search-box .search button{
+        padding: 10px;
+        border: none;
+        background-color: #0E2688;
+        color: #fff;
+        border-radius: 12px;
+        width: 100%;
+    }
+
+    .delivery-storage-wrap .payee-phone-num .payee-list{
+        background-color: #fff;
+        padding: 15px 0;
+        height: 65px;
+        margin-top: 10px;
+    }
+
+    .delivery-storage-wrap .payee-phone-num .payee-list > div {
+        padding: 10px 0;
+        font-size: 17px;
+    }
+    .delivery-storage-wrap .payee-phone-num  .payee-list span{
+        padding-left: 15px;
+    }
+    .delivery-storage-wrap .payee-phone-num  .payee-list > div input{
+        width: 18px;
+        height: 18px;
+        vertical-align: middle;
+    }
+    .payee-btn button{
+        width: 40%;
+        padding: 9px 0;
+        color: #fff;
+        background-color: #0E2688;
+        border: none;
+        outline: none;
+        font-size: 15px;
+        margin-top: 17px;
+        border-radius: 50px;
+    }
+    /* 택배기사용 - 입고취소 */
+    .delivery-cancle-wrap  .delivery-cancle-box{
+        text-align: center;
+        padding-top: 15px;
+    }
+
+    .delivery-cancle-wrap  .delivery-cancle-box .title-bg {
+        background: url(../images/delivery-cancle.png) no-repeat 50% 50% / contain;
+        width: 90px;
+        height: 73px;
+        margin: 0 auto;
+    }
+    .delivery-cancle-wrap .delivery-cancle-box .cancle-box{
+        width: 83%;
+        margin: 0 auto;
+    }
+    .delivery-cancle-wrap .delivery-cancle-box .code-box{
+        padding-top: 30px;
+    }
+    .delivery-cancle-wrap .delivery-cancle-box .code-box p{
+        font-size: 18px;
+        font-weight: 600;
+    }
+    .delivery-cancle-wrap .delivery-cancle-box .code-box .code{
+        padding-top: 43px;
+    }
+    .delivery-cancle-wrap .delivery-cancle-box .code-box .code input{
+        width: 70%;
+        padding: 10px 5px;
+    }
+    .delivery-cancle-wrap .delivery-cancle-box .btn-wrap{
+        padding-top: 24px;
+        padding-bottom: 35vh;
+    }
+    .delivery-cancle-wrap  .delivery-cancle-box button{
+        padding: 12px;
+        width: 50%;
+        border: none;
+        background-color: #0E2688;
+        color: #fff;
+        border-radius: 12px;
+    }
+    /* 택배기사 - 입고리스트 */
+    .delivery-list-wrap .delivery-list-box {
+        padding-top: 35px;
+    }
+    .delivery-list-wrap .delivery-list-box .list-box {
+        text-align: center;
+    }
+    .delivery-list-wrap .delivery-list-box .list-box .title-bg{
+        background: url(../images/delivery-list.png) no-repeat 50% 50% / contain;
+        width: 90px;
+        height: 90px;
+        margin: 0 auto;
+    }
+    .delivery-list-wrap .delivery-list-box .list-box p {
+        font-size: 18px;
+        padding: 10px 0;
+    }
+    .delivery-list-wrap .delivery-list-box .list-box .list {
+        padding-bottom: 130px;
+    }
+    .delivery-list-wrap .delivery-list-box .list-box .list table{
+        width: 90%;
+        margin: 30px auto;
+    }
+
+    .delivery-list-wrap .delivery-list-box .list-box .list table tr th{
+        background-color: #F4F8FC;
+        padding: 20px 5px;
+        font-size: 14px;
+    }
+    .delivery-list-wrap .delivery-list-box .list-box .list table td{
+        padding: 17px 5px;
+        border-bottom: 1px #0E2688 solid;
+        font-size: 15px;
+    }
+
+    .delivery-list-wrap .delivery-list-box .list-box .list table td button{
+        background-color: #0E2688;
+        color: #fff;
+        border-radius: 12px;
+        padding: 12px;
+        font-size: 14px;
+        width: 90%;
+    }
+    .delivery-list-wrap .notice-wrap{
+        width: 300px;
+        height: 190px;
+        text-align: center;
+        background-color: #F4F8FC;
+        padding: 20px;
+        border-radius: 22px;
+        position: fixed;
+        top: 35%;
+        left: 50%;
+        transform: translateX(-50%);
+        display: none;
+        z-index: 999;
+    }
+    .delivery-list-wrap .notice-wrap p:first-child{
+        font-size: 23px;
+        font-weight: bold;
+        padding: 10px 0;
+    }
+    .delivery-list-wrap .notice-wrap p:nth-child(2){
+        line-height: 21px;
+        margin-top: 7px;
+    }
+    .delivery-list-wrap .notice-wrap p:nth-child(3){
+        line-height: 20px;
+    }
+    .delivery-list-wrap .notice-wrap button{
+        width: 40%;
+        padding: 7px 0;
+        color: #fff;
+        background-color: #0E2688;
+        border: none;
+        outline: none;
+        font-size: 15px;
+        margin-top: 15px;
+        border-radius: 50px;
+    }
+    /* 택배기사 - 택배 반송  */
+    .delivery-return-wrap .delivery-return-box{
+        text-align: center;
+        padding-top: 15px;
+    }
+    .delivery-return-wrap .delivery-return-box .return-box p{
+        padding: 5px 0;
+    }
+    .delivery-return-wrap .delivery-return-box .title-bg{
+        background: url(../images/delivery-return.png) no-repeat 50% 50% / contain;
+        width: 90px;
+        height: 90px;
+        margin: 0 auto;
+    } 
+    .delivery-return-wrap .delivery-return-box .cancle-box{
+        width: 83%;
+        margin: 0 auto; 
+    }
+    .delivery-return-wrap .delivery-return-box .code-box{
+        padding-top: 30px
+    }
+    .delivery-return-wrap .delivery-return-box .code-box p{
+        font-size: 18px;
+        font-weight: 600;
+    }
+    .delivery-return-wrap .delivery-return-box .code-box .code{
+        padding-top: 43px;
+    }
+    .delivery-return-wrap .delivery-return-box .code-box .code input{
+        width: 70%;
+        padding: 10px 5px;
+    }
+    .delivery-return-wrap .delivery-return-box .btn-wrap{
+        padding-top: 15px;
+        padding-bottom: 35vh;
+    }
+    .delivery-return-wrap .delivery-return-box button{
+        padding: 12px;
+        width: 50%;
+        border: none;
+        background-color: #0E2688;
+        color: #fff;
+        border-radius: 12px;
+    }
+    /* 택배기사 - 반송택배 비빌번호 */
+    .delivery-return-pw-wrap .delivery-return-pw-box{
+        text-align: center;  
+        padding-top: 85px;
+    }
+    .delivery-return-pw-wrap .delivery-return-pw-box .return-pw{
+        width: 83%;
+        margin: 0 auto;
+    }
+    .delivery-return-pw-wrap .delivery-return-pw-box .return-pw p{
+        line-height: 20px;
+    }
+    .delivery-return-pw-wrap .delivery-return-pw-box .return-pw .pw-box{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    } 
+    .delivery-return-pw-wrap .delivery-return-pw-box .return-pw .pw-box input{
+        width: 60%;
+        padding: 10px 5px;
+        margin-top: 15px;
+    }
+    .delivery-return-pw-wrap .delivery-return-pw-box .return-pw .pw-btn{
+        padding-top: 35px;
+    }
+    .delivery-return-pw-wrap .delivery-return-pw-box .return-pw .pw-btn button{
+        padding: 10px;
+        border: none;
+        background-color: #0E2688;
+        color: #fff;
+        border-radius: 12px;
+        width: 30%;
+    }
+    .delivery-return-pw-wrap .delivery-return-pw-box .text-box2{
+        padding-top: 80px;
+        width: 80%;
+        margin: 0 auto;
+        padding-bottom: 30vh;
+    }
+    .delivery-return-pw-wrap .delivery-return-pw-box .text-box2 p{
+        color: red;
+        line-height: 22px;
+    }
+    .delivery-return-pw-wrap .notice-wrap > div{
+        width: 300px;
+        height: 190px;
+        background-color: #F4F8FC;
+        padding: 20px;
+        text-align: center;
+        border-radius: 22px;
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 35%;
+        z-index: 999;
+    }
+    .delivery-return-pw-wrap .notice-wrap .pw-correct{
+        display: none;
+    }
+    .delivery-return-pw-wrap .notice-wrap .pw-correct p{
+        line-height: 18px;
+        font-size: 15px;
+    }
+    .delivery-return-pw-wrap .notice-wrap .pw-correct p:first-child,
+    .delivery-return-pw-wrap .notice-wrap .pw-incorrect p:first-child{
+        font-size: 23px;
+        font-weight: bold;
+        padding: 10px 0;
+    }
+    .delivery-return-pw-wrap .notice-wrap .pw-correct p:nth-child(2){
+        color: red;
+    }
+    .delivery-return-pw-wrap .notice-wrap .pw-correct button{
+        width: 40%;
+        padding: 9px 0;
+        color: #fff;
+        background-color: #0E2688;
+        border: none;
+        outline: none;
+        font-size: 15px;
+        margin-top: 10px;
+        border-radius: 50px;
+    }
+    .delivery-return-pw-wrap .notice-wrap .pw-correct .btn1{
+        margin-right: 5px;
+    }
+    .delivery-return-pw-wrap .notice-wrap .pw-correct .btn2{
+        margin-left: 5px;
+    }
+    .delivery-return-pw-wrap .notice-wrap .pw-incorrect { 
+        display: none;
+    }
+    .delivery-return-pw-wrap .notice-wrap .pw-incorrect p:nth-child(2){
+        padding-top: 25px;
+    }
+    .delivery-return-pw-wrap .notice-wrap .pw-incorrect button{
+        width: 40%;
+        padding: 9px 0;
+        color: #fff;
+        background-color: #0E2688;
+        border: none;
+        outline: none;
+        font-size: 15px;
+        margin-top: 25px;
+        border-radius: 50px;
+    }
+    /* 세탁기사 - 택배함 코드 */
+    .laundaryman-find-code-wrap {}    
+    .laundaryman-find-code-wrap .laundary-find-box{
+        padding-top: 15px;
+        text-align: center;
+    }
+    .laundaryman-find-code-wrap .laundary-find-box .find-box p{
+        padding: 5px 0;
+    }
+    .laundaryman-find-code-wrap .laundary-find-box .title-bg{
+        background: url(../images/find-title-bg1.png) no-repeat 50% 50% / contain;
+        width: 90px;
+        height: 90px;
+        margin: 0 auto;
+    }
+    .laundaryman-find-code-wrap .laundary-find-box .code-box{
+        width: 83%;
+        margin: 0 auto;
+        padding-top: 30px;
+    }    
+    .laundaryman-find-code-wrap .laundary-find-box .code-box p{
+        font-size: 18px;
+        font-weight: 600;
+    }
+    .laundaryman-find-code-wrap .laundary-find-box .code-box .code{
+        padding-top: 43px;
+    }
+    .laundaryman-find-code-wrap .laundary-find-box .code-box .code input{
+        width: 70%;
+        padding: 10px 5px;
+    }
+    .laundaryman-find-code-wrap .btn-wrap{
+        text-align: center;
+        padding-top: 15px;
+        padding-bottom: 40px;
+    }
+    .laundaryman-find-code-wrap .list-btn{
+        text-align: center;
+        padding-bottom: 120px;
+    }
+    .laundaryman-find-code-wrap .btn-wrap button,
+    .laundaryman-find-code-wrap .list-btn button{
+        padding: 12px;
+        width: 50%;
+        border: none;
+        background-color: #0E2688;
+        color: #fff;
+        border-radius: 12px;
+    }
+    .laundaryman-find-code-wrap .list-btn button {
+        margin-top: 10px;
+    }
+    /* 세탁기사 - 세탁찾기 */
+    .laundaryman-find-wrap  .laundary-find {
+        width: 83%;
+        margin:0 auto;
+    }
+    .laundaryman-find-wrap  .laundary-find .find-box{
+        text-align: center;
+        padding-top: 15px;
+    }
+    .laundaryman-find-wrap .laundary-find .find-box p{
+        padding: 5px 0;
+    }
+    .laundaryman-find-wrap .laundary-find .find-box .title-bg{
+        background: url(../images/find-title-bg1.png) no-repeat 50% 50% / contain;
+        width: 90px;
+        height: 90px;
+        margin: 0 auto;
+    }
+    .laundaryman-find-wrap .laundary-find .find-textbox{
+        padding: 10px 0;
+    }
+    .laundaryman-find-wrap .laundary-find .find-textbox .laundary-memo{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .laundaryman-find-wrap .laundary-find .find-textbox .laundary-memo textarea{
+        background-color: #F4F8FC;
+        width: 76%;
+        padding: 10px;
+        padding: 5px;
+    }
+    .laundaryman-find-wrap .laundary-find .find-textbox span{
+        width: 20%;
+    }
+    .laundaryman-find-wrap .laundary-find .find-textbox > div{
+        margin-top: 15px;
+    }
+    .laundaryman-find-wrap .laundary-find .find-textbox input{
+        width: 75%;
+        padding: 10px 5px;
+        border: none;
+        border-bottom: 1px #000 solid;
+        background-color: #F4F8FC;
+    }
+    .laundaryman-find-wrap .find-btn {
+        padding-top: 30px;
+        padding-bottom: 120px;
+        text-align: center;
+    }
+    .laundaryman-find-wrap .find-btn button{
+        padding: 12px;
+        width: 50%;
+        border: none;
+        background-color: #0E2688;
+        color: #fff;
+        border-radius: 12px;
+    } 
+    .laundaryman-find-wrap .notice-wrap{
+        width: 300px;
+        height: 190px;
+        text-align: center;
+        background-color: #F4F8FC;
+        padding: 20px;
+        border-radius: 22px;
+        position: fixed;
+        top: 35%;
+        left: 50%;
+        transform: translateX(-50%);
+        display: none;
+        z-index: 99;
+    }
+    .laundaryman-find-wrap .notice-wrap p:first-child{
+        font-size: 23px;
+        font-weight: bold;
+        padding: 10px 0;
+    }
+    .laundaryman-find-wrap .notice-wrap p:nth-child(2){
+        line-height: 40px;
+    }
+    .laundaryman-find-wrap .notice-wrap button{
+        width: 40%;
+        padding: 7px 0;
+        color: #fff;
+        background-color: #0E2688;
+        border: none;
+        outline: none;
+        font-size: 15px;
+        margin-top: 15px;
+        border-radius: 50px;
+
+    }
+    /* 세탁기사 - 택배함 입고리스트 조회 */
+    .laundary-list-wrap .laundary-list-box {
+        text-align: center;
+        padding-top: 50px;
+    }
+    .laundary-list-wrap .laundary-list-box .list-title p{
+        padding: 5px 0;
+        font-size: 18px;
+        text-align: center;
+        width: 100%;
+        padding-top: 10px;
+    }
+    .laundary-list-wrap .laundary-list-box .laundary-bg {
+        background: url(../images/laundary-list.png) no-repeat 50% 50% /contain;
+        width: 90px;
+        height: 90px;
+        margin: 0 auto;
+    }
+    .laundary-list-wrap .laundary-list-box .table-wrap {
+        padding-top: 30px;
+        padding-bottom: 30vh;
+    }
+
+    .laundary-list-wrap .laundary-list-box .table-wrap table{
+        margin: 0 auto;
+        width: 90%;
+    }
+    .laundary-list-wrap .laundary-list-box .table-wrap table th{
+        background-color: #F4F8FC;
+        padding: 20px 5px;
+        font-size: 15px;
+    }
+    .laundary-list-wrap .laundary-list-box .table-wrap table td{
+        padding: 15px 5px;
+        font-size: 14px;
+        border-bottom: 1px #0E2688 solid;
+    }
+    .laundary-list-wrap .laundary-list-box .table-wrap table td:nth-child(1){
+        width: 21%;
+    }
+
+
+
+    /* 세탁기사 - 세탁물 검수 리스트 */
+    .laundary-check-list-wrap .laundary-check-list-box,
+    .laundary-factory-list-wrap .laundary-factory-list-box,
+    .laundary-factory-outlist-wrap .laundary-factory-outlist-box{
+        padding-top: 50px;
+
+    }
+
+    .laundary-check-list-wrap .laundary-check-list-box .list-box .title-bg,
+    .laundary-factory-list-wrap .laundary-factory-list-box .list-box .title-bg,
+    .laundary-factory-outlist-wrap .laundary-factory-outlist-box .title-bg{
+        background: url(../images/laundary-check-list.png) no-repeat 50% 50% / contain;
+        width: 90px;
+        height: 90px;
+        margin: 0 auto;
+    }
+    .laundary-check-list-wrap .laundary-check-list-box .list-box p,
+    .laundary-factory-list-wrap .laundary-factory-list-box .list-box p,
+    .laundary-factory-outlist-wrap .laundary-factory-outlist-box .list-box p{
+        font-size: 18px;
+        font-weight: 600;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .laundary-check-list-wrap .laundary-check-list-box .list-textbox,
+    .laundary-factory-list-wrap .laundary-factory-list-box .list-textbox,
+    .laundary-factory-outlist-wrap .laundary-factory-outlist-box .list-textbox,
+    .deliveryman-memo /* 택배기사 특이사항 기재란 - 공장입고 , 세탁물검수리스트 공통 항목 */{
+        width: 83%;
+        margin: 0 auto;
+        padding: 10px 0;
+    }
+    .laundary-check-list-wrap .laundary-check-list-box .list-textbox > div,
+    .laundary-factory-list-wrap .laundary-factory-list-box .list-textbox > div,
+    .laundary-factory-outlist-wrap .laundary-factory-outlist-box .list-textbox > div{
+        margin-top: 15px;
+    }
+
+    .laundary-check-list-wrap .laundary-check-list-box .list-textbox span,
+    .laundary-factory-list-wrap .laundary-factory-list-box .list-textbox span,
+    .laundary-factory-outlist-wrap .laundary-factory-outlist-box .list-textbox span,
+    .deliveryman-memo span /* 택배기사 특이사항 기재란 - 공장입고 , 세탁물검수리스트 공통 항목 */{
+        width: 20%;
+    }
+
+    .laundary-check-list-wrap .laundary-check-list-box .list-textbox input,
+    .laundary-factory-list-wrap .laundary-factory-list-box .list-textbox input,
+    .laundary-factory-outlist-wrap .laundary-factory-outlist-box .list-textbox input{
+        width: 75%;
+        padding: 10px 5px;
+        border: none;
+        border-bottom: 1px #000 solid;
+        background-color: #F4F8FC;
+    }
+    
+    .laundary-check-list-wrap .laundary-check-list-box .list-textbox .laundary-cost input{
+        width: 50%;
+    }
+    .laundary-check-list-wrap .laundary-check-list-box .list-textbox .laundary-cost button,
+    .laundary-factory-list-wrap .laundary-factory-list-box .list-textbox .laundary-cost button {
+        width: 23%;
+        text-align: center;
+        background-color: #0E2688;
+        color: #fff;
+        border-radius: 12px;
+        padding: 12px 0;
+        margin-left: 9px;
+    }
+    .laundary-check-list-wrap .laundary-check-list-box .list-textbox .laundary-memo,
+    .laundary-factory-list-wrap .laundary-factory-list-box .list-textbox .laundary-memo,
+    .laundary-factory-outlist-wrap .laundary-factory-outlist-box .list-textbox .laundary-memo,
+    .deliveryman-memo /* 택배기사 특이사항 기재란 - 공장입고 , 세탁물검수리스트 공통 항목 */ {
+        display: flex;
+    }
+    .laundary-check-list-wrap .laundary-check-list-box .list-textbox .laundary-memo textarea,
+    .laundary-factory-list-wrap .laundary-factory-list-box .list-textbox .laundary-memo textarea,
+    .laundary-factory-outlist-wrap .laundary-factory-outlist-box .list-textbox .laundary-memo textarea,
+    .deliveryman-memo textarea /* 택배기사 특이사항 기재란 - 공장입고 , 세탁물검수리스트 공통 항목 */{
+        width: 77%;
+        height: 80px;
+        background-color: #F4F8FC;
+        padding: 5px;
+    }
+    .laundary-check-list-wrap .laundary-check-list-box .btn,
+    .laundary-factory-list-wrap .laundary-factory-list-box .btn{
+        text-align: center;
+        padding-bottom: 120px;
+    }
+    .laundary-factory-outlist-wrap .laundary-factory-outlist-box{
+        padding-bottom: 120px;
+    }
+    .laundary-check-list-wrap .laundary-check-list-box .btn button,
+    .laundary-factory-list-wrap .laundary-factory-list-box .btn button{
+        background-color: #0E2688;
+        color: #fff;
+        border-radius: 12px;
+        width: 50%;
+        padding: 12px;
+        margin-top: 30px;
+    }
+    /* 세탁기사 - 세탁공장입고 리스트 */
+
+
+    /* 세탁기사 - 세탁 보관 */
+    .laundaryman-storage-code-wrap .laundaryman-storage-code-box{
+        text-align: center;
+    }
+    .laundaryman-storage-code-wrap .laundaryman-storage-code-box .storage-box{
+        padding-top: 10px;
+    }
+    .laundaryman-storage-code-wrap .laundaryman-storage-code-box .storage-box .title-bg{
+        background: url(../images/storage-bg.png)no-repeat 50% 50% / contain;
+        width: 90px;
+        height: 90px;
+        margin: 0 auto;
+    }
+    .laundaryman-storage-code-wrap .laundaryman-storage-code-box .storage-box p{
+        padding: 5px 0;
+    }
+    .laundaryman-storage-code-wrap .laundaryman-storage-code-box .code-box{
+        width: 83%;
+        margin: 0 auto;
+        padding-top: 30px;
+    }
+    .laundaryman-storage-code-wrap .laundaryman-storage-code-box .code-box p{
+        font-weight: 600;
+        font-size: 18px;
+    } 
+    .laundaryman-storage-code-wrap .laundaryman-storage-code-box .code-box .code{
+        padding-top: 43px;
+    }
+    .laundaryman-storage-code-wrap .laundaryman-storage-code-box .code-box .code input{
+        width: 70%;
+        padding: 10px 5px;
+    }
+    .laundaryman-storage-code-wrap .btn-wrap,
+    .laundaryman-storage-code-wrap .list-btn{
+        text-align: center;
+        padding-top: 15px;
+    }
+    .laundaryman-storage-code-wrap .list-btn{
+        padding-top: 10px;
+    }
+    .laundaryman-storage-code-wrap .btn-wrap button,
+    .laundaryman-storage-code-wrap .list-btn button{
+        padding: 12px;
+        width: 50%;
+        border: none;
+        background-color: #0E2688;
+        color: #fff;
+        border-radius: 12px;
+    }
+
+    /* 세탁기사 - 공장출고리스트 */
+    .laundaryman-storage-wrap .laundaryman-box {
+    }
+    .laundaryman-storage-wrap .laundaryman-box .list-box{
+        padding-top: 50px;
+    }
+    .laundaryman-storage-wrap .laundaryman-box .list-box p{
+        font-size: 18px;
+        font-weight: 600;
+        padding: 10px 0;
+        text-align: center;
+    }
+    .laundaryman-storage-wrap .laundaryman-box .list-box .title-bg{
+        background: url(../images/laundary-check-list.png) no-repeat 50% 50% /contain;
+        width: 90px;
+        height: 90px;
+        margin: 0 auto;
+    }
+    .laundaryman-storage-wrap .laundaryman-box .list-textbox{
+        width: 83%;
+        margin: 0 auto; 
+    }
+    .laundaryman-storage-wrap .laundaryman-box .list-textbox > div{
+        margin-top: 15px;
+    }
+    .laundaryman-storage-wrap .laundaryman-box .list-textbox span{
+        width: 20%;
+    }
+    .laundaryman-storage-wrap .laundaryman-box .list-textbox input{
+        width: 75%;
+        padding: 10px 5px;
+        border: none;
+        border-bottom: 1px #000 solid;
+        background-color: #F4F8FC;
+    }
+    .laundaryman-storage-wrap .laundaryman-box .list-textbox .laundary-memo{
+        display: flex;
+    }
+    .laundaryman-storage-wrap .laundaryman-box .list-textbox .laundary-memo textarea{
+        width: 77%;
+        height: 80px;
+        background-color: #F4F8FC;
+        padding: 5px;
+    }
+    .laundaryman-storage-wrap .laundaryman-box .btn{
+        text-align: center;
+        padding-bottom: 35vh;
+    }
+    .laundaryman-storage-wrap .laundaryman-box .btn button{
+        background-color: #0E2688;
+        color: #fff;
+        border-radius: 12px;
+        width: 50%;
+        padding: 12px;
+        margin-top: 30px;
+    }
+    .laundaryman-storage-wrap .notice-box{
+        width: 300px;
+        background-color: #fff;
+        padding: 20px;
+        text-align: center;
+        border-radius: 22px;
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 35%;
+        height: 190px;
+        display: none;
+        z-index: 999;
+    }
+    .laundaryman-storage-wrap .notice-box p{
+        line-height: 18px;
+        font-size: 15px;
+    }
+    .laundaryman-storage-wrap .notice-box p:first-child{
+        font-size: 23px;
+        font-weight: bold;
+        padding: 10px 0;
+    }
+    .laundaryman-storage-wrap .notice-box p:nth-child(2){
+        color: red;
+    }
+    .laundaryman-storage-wrap .notice-box button{
+        width: 40%;
+        padding: 9px 0;
+        color: #fff;
+        background-color: #0E2688;
+        border: none;
+        outline: none;
+        font-size: 15px;
+        margin-top: 10px;
+        border-radius: 50px;
+    }
+    /* 세탁기사 - 수거요청 */
+    .laundaryman-pickup-wrap .laundaryman-pickup-box{
+    }
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .list-box {
+        padding-top: 50px;
+    }
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .list-box p{
+        text-align: center;
+        font-size: 18px;
+        font-weight: 600;
+        padding: 10px 0;
+    }
+
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .list-box .title-bg{
+        background: url(../images/laundary-check-list.png) no-repeat 50% 50% / contain;
+        width: 90px;
+        height: 90px;
+        margin: 0 auto;
+    }
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .list-textbox{
+        width: 83%;
+        margin: 0 auto;
+    }
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .list-textbox > div{
+        margin-top: 15px;
+
+    }
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .list-textbox span{
+        width: 20%;
+    }
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .list-textbox .laundary-pickup-time input{
+        width: 45%;
+    }
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .list-textbox .laundary-pickup-time button{
+        width: 27%;
+        text-align: center;
+        background-color: #0E2688;
+        color: #fff;
+        border-radius: 12px;
+        padding: 12px 0;
+        margin-left: 9px;
+
+    }
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .list-textbox input{
+        width: 75%;
+        padding: 10px 5px;
+        border: none;
+        border-bottom: 1px #000 solid;
+        background-color: #F4F8FC;
+    }
+
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .list-textbox .laundary-memo{
+        display: flex;
+    }
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .list-textbox .laundary-memo textarea{
+        width: 77%;
+        height: 80px;
+        background-color: #F4F8FC;
+        padding: 5px;
+    }
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .btn{
+        text-align: center;
+        padding-bottom: 120px;
+    }
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .btn button{
+        background-color: #0E2688;
+        color: #fff;
+        border-radius: 12px;
+        width: 50%;
+        padding: 12px;
+        margin-top: 30px;
+    }
+    .laundaryman-pickup-wrap .notice{
+        width: 300px;
+        height: 190px;
+        text-align: center;
+        background-color: #F4F8FC;
+        padding: 20px;
+        border-radius: 22px;
+        position: fixed;
+        top: 35%;
+        left: 50%;
+        transform: translateX(-50%);
+        display: none;
+        z-index: 999;
+    }
+    .laundaryman-pickup-wrap .notice p:first-child{
+        font-size: 23px;
+        font-weight: bold;
+        padding: 10px 0;
+    }
+    .laundaryman-pickup-wrap .notice p:nth-child(2){
+        line-height: 40px;
+    }
+    .laundaryman-pickup-wrap .notice form{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .laundaryman-pickup-wrap .notice form input{
+        width: 70%;
+    }
+    .laundaryman-pickup-wrap .notice button{
+        width: 40%;
+        padding: 7px 0;
+        color: #fff;
+        background-color: #0E2688;
+        border: none;
+        outline: none;
+        font-size: 15px;
+        margin-top: 15px;
+        border-radius: 50px;
+    }
+
+    /* 포인트 충전 */
+    .point-wrap {}
+    .point-wrap .point-title{
+        text-align: center;
+        padding-top: 30px;
+    }
+    .point-wrap .point-title p{
+        font-weight: 600;
+        font-size: 18px;
+    }
+    .point-wrap .point-title .title-bg{
+        background: url(../images/point.png) no-repeat 50% 50% / contain;
+        width: 90px;
+        height: 90px;
+        margin: 0 auto;
+    }
+    .point-wrap .point-box{
+        width: 83%;
+        margin: 0 auto;
+        padding-top: 36px;
+        position: relative;
+    }
+    .point-wrap .point-box .amount-box{
+        display: flex;
+        flex-wrap: wrap;
+        width: 95%;
+        margin: 0 auto;
+    }
+    .point-wrap .point-box .amount-box p{
+        width: 100%;
+        font-weight: 600;
+        font-size: 17px;
+        padding: 10px 0;
+    }
+    .point-wrap .point-box .amount-box .amount{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .point-wrap .point-box .amount-box .amount div {
+        width: 32%;
+        margin-top: 8px;
+        margin-right: 5px;
+    }
+    .point-wrap .point-box .amount-box .amount div button.on{
+        background-color: #0E2688;
+        color: #fff;
+    } 
+    .point-wrap .point-box .amount-box .amount div button{
+        border: #0E2688 2px solid;
+        color: #0E2688;
+        padding: 12px;
+        font-weight: 600;
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .point-wrap .point-box .means-box{
+        display: flex;
+        flex-wrap: wrap;
+        width: 95%;
+        margin: 0 auto;
+        padding-top: 40px;
+        border-top: 1px #ddd solid;
+        margin-top: 40px;
+        justify-content: space-around;
+    }
+    .point-wrap .point-box .means-box p{
+        width: 100%;
+        font-weight: 600;
+        font-size: 17px;
+        padding: 10px 0;
+    }
+    .point-wrap .point-box .means-box > div{
+        width: 30%;
+        text-align: center;
+        margin-right: 5px;
+        margin-top: 8px;
+    }    .point-wrap .point-box  .means-box > div button.on{
+        background-color: #0E2688;
+        color: #fff;
+    } 
+    .point-wrap .point-box .means-box > div button{
+        border: #0E2688 2px solid;
+        color: #0E2688;
+        padding: 12px;
+        font-weight: 600;
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .point-wrap .point-box .point-text{
+        background-color: #F4F8FC;
+        width: 300px;
+        height: 170px;
+        text-align: center;
+        padding: 20px;
+        border-radius: 22px;
+        position: fixed;
+        top: 35%;
+        left: 50%;
+        z-index: 99;
+        transform: translateX(-50%);
+        display: none;
+    }
+    .point-wrap .point-box .point-text p{
+        font-weight: 600;
+        font-size: 17px;
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
+    .point-wrap .point-box .point-text input{
+        background-color: transparent;
+        border:none;
+        outline: none;
+        padding: 10px 5px;
+        border-bottom: 1px #000 solid;
+    }
+    .point-wrap .point-box .point-text span{
+        font-weight: 600;
+    }
+    .point-wrap .point-box .point-text .btn-wrap{
+        padding-top: 20px;
+    }
+    .point-wrap .point-box .point-text .btn-wrap button{
+        background-color: #0E2688;
+        color: #fff;
+        padding: 7px 0;
+        width: 35%;
+        font-size: 15px;
+        border-radius: 50px;
+        margin-right: 6px;
+    }
+
+    .point-wrap .charge-btn{
+        text-align: center;
+        padding-top: 50px;
+        padding-bottom: 120px;
+    }
+    .point-wrap .charge-btn button {
+        background-color: #0E2688;
+        color: #fff;
+        padding: 12px;
+        width: 50%;
+        border-radius: 12px;
+    }
+    .point-wrap .notice{
+        background-color: #F4F8FC;
+        width: 300px;
+        height: 170px;
+        text-align: center;
+        padding: 20px;
+        border-radius: 22px;
+        position: fixed;
+        top: 35%;
+        left: 50%;
+        z-index: 99;
+        transform: translateX(-50%);
+        display: none;
+    }
+    .point-wrap .notice p:first-child{
+        font-size: 23px;
+        font-weight: bold;
+        padding: 10px 0;
+    }
+
+    .point-wrap .notice p:nth-child(2){
+        line-height: 40px
+    }
+    .point-wrap .notice button{
+        background-color: #0E2688;
+        color: #fff;
+        padding: 7px 0;
+        width: 40%;
+        font-size: 15px;
+        border-radius: 50px;
+        margin-top: 15px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media all and (max-width:450px){
+    .login-wrap .notice button, 
+    .notice-box1 .notice button, 
+    .notice-box2 .notice button, 
+    .resident-form-wrap .notice button,
+    .join-wrap .btn-wrap .btn-box button{
+        font-size: 14px;
+    }
+    .login-wrap .login-txtbox h2,
+    .join-wrap .join-txtbox h2,
+    .resident-form-wrap .resident-form-title h2,
+    .delivery-form-wrap .delivery-form-title h2{
+        font-size: 20px;
+    }
+    .login-wrap .login-txtbox p,
+    .join-wrap .join-txtbox p{
+        font-size: 15px;
+    }
+    .login-wrap .btn-wrap,
+    .join-wrap .btn-wrap{
+        width: 80%;
+    }
+    .login-wrap .login-info{
+        width: 70%;
+    }
+    .login-wrap .btn-wrap .btn-box button,
+    .login-input-box .btn-position,
+    .resident-form-wrap .form-box .resident-gender button,
+    .delivery-form-wrap .notice button,
+    .find-wrap .notice-btn button,
+    .find-wrap .find-btn button,
+    .find-wrap .home-btn button,
+    .delivery-form-wrap .delivery-division button{
+        font-size: 14px;
+    }
+    .login-wrap .resident-popUp,
+    .login-wrap .delivery-popUp,
+    .resident-form-wrap .notice-wrap,
+    .delivery-form-wrap .notice-wrap,
+    .find-wrap .delivery-home,
+    .find-wrap .notice-find,
+    .find-wrap .notice-incorrect,
+    .find-wrap .notice-wrap .notice1,
+    .find-wrap .notice-wrap .notice2,
+    .notice-box1 .notice,
+    .notice-box2 .notice,
+    .select_boxes .notice,
+    .select_boxes .notice1{
+        width: 280px;
+        height: 185px;
+        padding: 19px;
+    }
+    .login-wrap .notice .text-box h2,
+    .resident-form-wrap .notice-wrap p:first-child,
+    .delivery-form-wrap .notice-wrap p:first-child,
+    .find-wrap .notice-find p:first-child,
+    .find-wrap .notice-incorrect p:first-child,
+    .select_boxes .notice p:first-child,
+    .select_boxes .notice1 p:first-child,
+    .find-wrap .notice-wrap .notice1 p:first-child,
+    .find-wrap .notice-wrap .notice2 p:first-child{
+        font-size: 21px;
+        padding: 8px 0;
+    }
+    .login-wrap .notice .text-box p,
+    .resident-form-wrap .notice-wrap p{
+        font-size: 15px;
+    }
+    /* .join-wrap .btn-wrap .btn-box button{
+        padding: 15px 18px;
+    } */
+    .main-title h1::before{
+        width: 28px;
+        height: 32px;
+        bottom: 21px;
+    }
+    .resident-form-wrap .form-box .resident-gender .gender-wrap,
+    .delivery-form-wrap .delivery-division-box{
+        width: 50%;
+    }
+    .resident-form-wrap .personal-info,
+    .delivery-form-wrap .personal-info{
+        width: 80%;
+    }
+    .delivery-form-wrap .delivery-text{
+        width: 70%;
+    }
+    .delivery-form-wrap .delivery-text p{
+        font-size: 15px;
+    }
+    .resident-main-wrap .menu-wrap ul li:first-child,
+    .delivery-main-wrap .menu-wrap ul li:first-child{
+        font-size: 16px;
+    }
+    .resident-main-wrap .menu-wrap ul li:first-child::before,
+    .delivery-main-wrap .menu-wrap ul li:first-child::before{
+        width: 30px;
+        height: 29px;
+    }
+    .resident-main-wrap .menu-wrap .laundary-menu li .menu-1::before,
+    .delivery-main-wrap .menu-wrap .laundary-menu li .menu-1::before{
+        height: 40px;
+        top: 21px;
+        width: 46px;
+    }
+    .resident-main-wrap .menu-wrap .laundary-menu li .menu-3::before,
+    .delivery-main-wrap .menu-wrap .laundary-menu li .menu-3::before {
+        width: 51px;
+        height: 45px;
+        top: 23px;
+    }
+    .resident-main-wrap .menu-wrap ul li a,
+    .delivery-main-wrap .menu-wrap ul li a{
+        font-size: 14px;
+    }
+    .nav li{
+        width: 15%;
+    }
+    .info-wrap .info-btn-wrap .btn-box .btn a{
+        font-size: 16px;
+    }
+    .mypage-wrap .title-bg{
+        width: 70px;
+        height: 70px;
+    }
+    .mypage-wrap .mypage-title p{
+        font-size: 16px;
+    }
+    .mypage-wrap .edit{
+        padding: 44px 0;
+    }
+    .mypage-wrap .edit .edit-btn .btn{
+        width: 32%;
+    }
+    .mypage-wrap .edit .edit-btn .btn a {
+        font-size: 13px;
+        padding: 13px 4px;
+    }
+
+    .mypage-wrap .mypage-box{
+        margin-top: 20px;
+    }
+    .mypage-wrap .edit p span, .mypage-wrap .point p span {
+        font-size: 16px;
+    }
+    .mypage-wrap .edit p,
+    .mypage-wrap .point > p {
+        font-size: 15px;
+    }
+    .mypage-wrap .point-box{
+        width: 50%;
+    }
+    .mypage-wrap .point .btn{
+        width: 36%;
+    }
+    .mypage-wrap .point .message-btn {
+        width: 56%;
+        margin: 0 auto;
+        margin-top: 29px;
+    }
+    .mypage-wrap .edit .edit-btn .btn,
+    .mypage-wrap .point .btn{
+        border-radius: 8px;
+    }
+    .mypage-wrap .point-box,
+    .mypage-wrap .point-box .point-amount span{
+        font-size: 14px;
+    }
+    .mypage-wrap .point .btn button{
+        font-size: 13px;
+    }
+    .mypage-wrap .point-box .point-amount{
+        width: 62%;
+    }
+    .mypage-wrap .point-box .point-amount .amount{
+        margin-left: 17px;
+    }
+    .my-info-wrap .my-info-box .info-text p{
+        font-size: 16px;
+    }
+    .my-info-wrap .text-area span{
+        font-size: 15px;
+    }
+    .my-info-wrap .text-area input{
+        font-size: 14px;
+    }
+    .my-info-wrap .text-area .resident-gender .gender-wrap{
+        width: 50%;
+    }
+    .my-info-wrap .text-area .resident-gender button,
+    .my-info-wrap .my-info-box .info-box button{
+        font-size: 14px;
+    }
+    .my-info-wrap .correction-btn input{
+        font-size: 15px;
+    }
+    .my-info-wrap .info-change1{
+        width: 280px;
+        height: 236px;
+    }
+    .my-info-wrap .info-change2{
+        width: 280px;
+        height: 185px;
+        padding: 19px;
+    }
+    .my-info-wrap .info-change1 p:first-child,
+    .my-info-wrap .info-change2 p:first-child{
+        font-size: 21px;
+        padding: 8px 0;
+    }
+    .my-info-wrap .info-change1 input,
+    .my-info-wrap .info-change2 input,
+    .my-info-wrap .info-change1 button,
+    .my-info-wrap .info-change2 button{
+        font-size: 14px;
+    }
+    
+    .notice-box1 .notice p:first-child,
+    .notice-box2 .notice p:first-child{
+        font-size: 21px;
+    }
+    .notice-box1 .notice p,
+    .notice-box2 .notice p{
+        font-size: 15px;
+    }
+    .notice-box2 .notice p{
+        line-height: 26px;
+    }
+    .notice-box1 .notice input,
+    .notice-box2 .notice input{
+        font-size: 14px;
+    }
+    .find-wrap .find-textbox span {
+        width: 24%;
+    }
+    .find-wrap .find-textbox input {
+        width: 74%;
+    }
+    .find-wrap .find-textbox span,
+    .find-wrap .find-textbox input,
+    .find-wrap .laundary-find .find-textbox .laundary-memo textarea{
+        font-size: 15px;
+    }
+
+    .find-wrap .delivery-home{
+        padding: 10px 15px;
+    }
+    .find-wrap .delivery-home .home-pw {
+        margin-top: 9px;
+    }
+    .find-wrap .delivery-home .home-pw input{
+        padding: 7px 5px;
+        width: 80%;
+        font-size: 14px;
+    }
+    .find-wrap .delivery-home .home-text p:first-child{
+        font-size: 20px;
+    }
+
+    .find-wrap .delivery-home .home-text p{
+        font-size: 14px;
+    }
+    .find-wrap .delivery-home .btn{
+        margin-top: 9px;
+    }
+    .find-wrap .delivery-home .btn button{
+        font-size: 14px;
+        padding: 8px;
+    }
+    .find-wrap .notice-find p{
+        font-size: 15px;
+    }
+    .select_boxes .notice p{
+        font-size: 14px;
+    }
+    .select_boxes .notice button,
+    .select_boxes .notice1 button{
+        font-size: 14px;
+    }
+    .return-wrap .return-pw-box .password .pwBox{
+        width: 85%;
+    }
+    .return-wrap .return-pw-box .password span{
+        font-size: 15px;
+    }
+    .return-wrap .return-pw-box > p{
+        font-size: 20px;
+    }
+    .return-wrap .return-pw-box .password input{
+        font-size: 14px;
+    }
+    .return-wrap .return-btn button{
+        font-size: 14px;
+    }
+    .laundary-info .info-table .table-wrap table{
+        width: 95%;
+    }
+    .laundary-info .info-table .table-wrap table td:nth-child(2) {
+        width: 12%;
+    }
+    .laundary-info .info-table .table-wrap table th,
+    .laundary-message .info-table .table-wrap table th{
+        font-size: 14px;
+    }
+    .laundary-info .info-table .table-wrap table td,
+    .laundary-message .info-table .table-wrap table td{
+        font-size: 12px;
+    }
+    .laundary-info .info-table .table-wrap table th span {
+        font-size: 11px;
+    }
+    .laundary-info .info-table .table-wrap table th {
+        font-size: 13px;
+    }
+    .laundary-storage-wrap .storage-box .title-bg{
+        width: 80px;
+        height: 80px;
+    }
+    .laundary-storage-wrap .laundary-storage-info input,
+    .laundary-storage-wrap .laundary-storage-info span,
+    .laundary-storage-wrap .laundary-btn .laundary-memo textarea{
+        font-size: 15px;
+    }
+    .laundary-storage-wrap .laundary-btn button{
+        font-size: 14px;
+    }
+    .laundary-pickup-wrap .pickup-box .title-bg{
+        width: 80px;
+        height: 80px;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info > div span,
+    .laundary-pickup-wrap .laundary-pickup-info input,
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info .laundary-memo textarea,
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info .date-box .place select{
+        font-size: 15px;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info .address input{
+        font-size: 14px;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info .date-box .date label input{
+        font-size: 13px;
+    }
+    .laundary-pickup-wrap .laundary-btn button{
+        font-size: 14px;
+    }
+    .laundary-pickup-wrap .notice-wrap{
+        width: 280px;
+        height: 185px;
+        padding: 19px;
+    }
+    .laundary-pickup-wrap .notice-wrap p:first-child{
+        font-size: 21px;
+        padding: 8px 0;
+    }
+    .laundary-pickup-wrap .notice-wrap p:nth-child(2){
+        font-size: 15px;
+    }
+    .laundary-pickup-wrap .notice-wrap .notice-btn button{
+        font-size: 14px;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info .date-box .date .datetext {
+        font-size: 14px;
+    }
+    .delivery-storage-wrap .storage-box input,
+    .delivery-storage-wrap .storage-box .code-box span,
+    .delivery-storage-wrap .storage-box .search-box .text-box p,
+    .delivery-storage-wrap .storage-box .num-box .user-num select{
+        font-size: 15px;
+    }
+    .delivery-storage-wrap .storage-box .code-box span {
+        width: 23%;
+    }
+
+    .delivery-storage-wrap .storage-box .num-box .user-num .num-btn button,
+    .delivery-storage-wrap .storage-box .phone-num button,
+    .delivery-storage-wrap .delivery-storage-btn button{
+        font-size: 14px;
+    }
+
+    .delivery-storage-wrap .payee-phone-num{
+        width: 280px;
+    }
+    .delivery-storage-wrap .payee-phone-num p:first-child,
+    .delivery-storage-wrap .payee p:first-child{
+        font-size: 21px;
+        padding: 8px 0;
+    }
+    .delivery-storage-wrap .payee-phone-num p:nth-child(2),
+    .delivery-storage-wrap .payee-phone-num p:nth-child(3),
+    .delivery-storage-wrap .payee p:nth-child(2){
+        font-size: 15px;
+    }
+    
+    .delivery-storage-wrap .payee-phone-num .search-box .search input,
+    .delivery-storage-wrap .payee .payee-list > div input{
+        font-size: 15px;
+    }
+    .delivery-storage-wrap .payee-phone-num .search-box .search button,
+    .payee-btn button{
+        font-size: 14px;
+    }
+    .delivery-cancle-wrap .delivery-cancle-box .code-box .code input,
+    .delivery-cancle-wrap .delivery-cancle-box button{
+        font-size: 15px;
+    }
+    .delivery-list-wrap .delivery-list-box .list-box .list table{
+        width: 95%;
+    }
+    .delivery-list-wrap .delivery-list-box .list-box .list table td{
+        font-size: 13px;
+    }
+
+    .delivery-list-wrap .delivery-list-box .list-box .list table td button {
+        border-radius: 9px;
+        padding: 9px;
+        font-size: 12px;
+    }
+    .delivery-list-wrap .notice-wrap{
+        width: 280px;
+        height: 185px;
+        padding: 19px;
+    }
+    .delivery-list-wrap .notice-wrap p:first-child{
+        font-size: 21px;
+        padding: 8px 0;
+    }
+    .delivery-list-wrap .notice-wrap button{
+        font-size: 14px;
+    }
+    .delivery-return-wrap .delivery-return-box .code-box .code input,
+    .delivery-return-wrap .delivery-return-box button{
+        font-size: 15px;
+    }
+    .delivery-return-pw-wrap .delivery-return-pw-box .return-pw .pw-box input,
+    .delivery-return-pw-wrap .delivery-return-pw-box .return-pw .pw-btn button{
+        font-size: 15px;
+    }
+    .delivery-return-pw-wrap .delivery-return-pw-box .text-box2 p{
+        font-size: 15px;
+    }
+    .delivery-return-pw-wrap .notice-wrap .pw-correct p:first-child,
+    .delivery-return-pw-wrap .notice-wrap .pw-incorrect p:first-child{
+        font-size: 21px;
+        padding: 8px 0;
+    }
+    .delivery-return-pw-wrap .notice-wrap .pw-correct button,
+    .delivery-return-pw-wrap .notice-wrap .pw-incorrect button{
+        font-size: 14px;
+        
+    }
+    .delivery-return-pw-wrap .notice-wrap .pw-correct,
+    .delivery-return-pw-wrap .notice-wrap .pw-incorrect{
+        width: 280px;
+        height: 185px;
+        padding: 19px;
+    }
+    .delivery-return-pw-wrap .notice-wrap .pw-incorrect p:nth-child(2){
+        font-size: 15px;
+    }
+    .laundaryman-find-code-wrap .laundary-find-box .code-box .code input{
+        font-size: 15px;
+    }
+    .laundaryman-find-code-wrap .btn-wrap button, .laundaryman-find-code-wrap .list-btn button{
+        font-size: 14px;
+    }
+    .laundaryman-find-wrap .laundary-find .find-textbox input,
+    .laundaryman-find-wrap .laundary-find .find-textbox span,
+    .laundaryman-find-wrap .laundary-find .find-textbox textarea{
+        font-size: 15px;
+    }
+    .laundaryman-find-wrap .find-btn button{
+        font-size: 14px;
+    }
+    .laundaryman-find-wrap .notice-wrap{
+        width: 280px;
+        height: 185px;
+        padding: 19px;
+    }
+    .laundaryman-find-wrap .notice-wrap p:first-child{
+        font-size: 21px;
+        padding: 8px 0;
+    }
+    .laundaryman-find-wrap .notice-wrap button{
+        font-size: 14px;
+    }
+
+    .laundary-list-wrap .laundary-list-box .table-wrap table th{
+        font-size: 14px;
+    }
+    .laundary-list-wrap .laundary-list-box .table-wrap table td{
+        font-size: 13px;
+    }
+
+    .laundary-check-list-wrap .laundary-check-list-box .list-textbox span,
+    .laundary-factory-list-wrap .laundary-factory-list-box .list-textbox span,
+    .laundary-check-list-wrap .laundary-check-list-box .list-textbox input,
+    .laundary-factory-list-wrap .laundary-factory-list-box .list-textbox input,
+    .laundary-check-list-wrap .laundary-check-list-box .list-textbox .laundary-memo textarea,
+    .laundary-factory-list-wrap .laundary-factory-list-box .list-textbox .laundary-memo textarea,
+    .laundary-factory-outlist-wrap .laundary-factory-outlist-box .list-textbox span,
+    .laundary-factory-outlist-wrap .laundary-factory-outlist-box .list-textbox input,
+    .laundary-factory-outlist-wrap .laundary-factory-outlist-box .list-textbox .laundary-memo textarea, 
+    .deliveryman-memo span,
+    .deliveryman-memo textarea{
+        font-size: 15px;
+    }
+    .laundary-check-list-wrap .laundary-check-list-box .btn button,
+    .laundary-factory-list-wrap .laundary-factory-list-box .btn button,
+    .laundary-check-list-wrap .laundary-check-list-box .list-textbox .laundary-cost button{
+        font-size: 14px;
+    }
+    .laundaryman-storage-wrap .laundaryman-box .list-textbox span,
+    .laundaryman-storage-wrap .laundaryman-box .list-textbox input,
+    .laundaryman-storage-wrap .laundaryman-box .list-textbox textarea{
+        font-size: 15px;
+    }
+
+    .laundaryman-storage-wrap .laundaryman-box .btn button{
+        font-size: 15px;
+    }
+    .laundaryman-storage-wrap .notice-box{
+        width: 280px;
+        height: 185px;
+        padding: 19px;
+    }
+    .laundaryman-storage-wrap .notice-box p:first-child{
+        font-size: 21px;
+        padding: 8px 0;
+    }
+    .laundaryman-storage-wrap .notice-box button{
+        font-size: 14px;
+    }
+    .laundaryman-storage-code-wrap .laundaryman-storage-code-box .code-box .code input,
+    .laundaryman-storage-code-wrap .btn-wrap button, 
+    .laundaryman-storage-code-wrap .list-btn button{
+        font-size: 15px;
+    }
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .list-textbox span{
+        width: 23%;
+    }
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .list-textbox input{
+        width: 70%;
+    }
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .list-textbox span,
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .list-textbox input,
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .list-textbox .laundary-memo textarea,
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .list-textbox .laundary-pickup-time button,
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .btn button{
+        font-size: 15px;
+    }
+    .laundaryman-pickup-wrap .notice{
+        width: 280px;
+        height: 185px;
+        padding: 19px;
+    }
+    .laundaryman-pickup-wrap .notice p:first-child{
+        font-size: 21px;
+        padding: 8px 0;
+    }
+    .laundaryman-pickup-wrap .notice form input,
+    .laundaryman-pickup-wrap .notice button{
+        font-size: 14px;
+    }
+
+    .point-wrap .point-box .amount-box .amount div{
+        width: 31%;
+    }
+    .point-wrap .point-box .amount-box div > button,
+    .point-wrap .point-box .means-box > div button,
+    .point-wrap .charge-btn button{
+        font-size: 14px;
+    }
+    .point-wrap .notice{
+        width: 280px;
+        height: 185px;
+        padding: 19px;
+    }
+    .point-wrap .notice p:first-child{
+        font-size: 21px;
+        padding: 8px 0;
+    }
+    .point-wrap .notice p:nth-child(2) {
+        padding: 11px;
+    }
+    .point-wrap .notice button{
+        font-size: 14px;
+    }
+    .point-wrap .point-box .point-text{
+        width: 280px;
+        height: 185px;
+        padding: 19px;
+    }
+    .point-wrap .point-box .point-text input,
+    .point-wrap .point-box .point-text .btn-wrap button{
+        font-size: 14px;
+    }
+    
+
+}
+
+@media all and (max-width:425px){
+    .start-wrap .start-bg{
+        background-size: contain;
+    }
+    .start-wrap .btn-wrap p:first-child{
+        font-size: 35px;
+        padding-bottom: 19px;
+    }
+    .start-wrap .btn-wrap p:nth-child(2) {
+        font-size: 18px;
+        padding-bottom: 50px;
+    }
+    .start-wrap .btn-wrap .btn{
+        font-size: 14px;
+    }
+    .login-wrap .popUp-wrap .resident-popUp,
+    .login-wrap .popUp-wrap .delivery-popUp{
+        width: 260px;
+        padding:10px;
+    }
+    .join-wrap .btn-wrap .btn-box button{
+        font-size: 13px;
+    }
+    .login-wrap .btn-wrap, .join-wrap .btn-wrap {
+        width: 90%;
+    }
+    .main-title h1::before{
+        left: 20%;
+        bottom: 20px;
+    }
+    .mypage-wrap .mypage-box {
+        margin-top: 0;
+    }
+    .mypage-wrap .point-box {
+        width: 56%;
+    }
+    .mypage-wrap .edit {
+        padding: 28px 0;
+    }
+    .mypage-wrap .edit .edit-btn .btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .mypage-wrap .point-box .point-amount .amount {
+        position: absolute;
+        right: 11px;
+    }
+    .my-info-wrap .text-area input{
+        width: 78%;
+    }
+    .select_box_num>span,
+    .select_box_special span {
+        font-size: 14px;
+    }
+    .selected::after{
+        font-size: 11px;
+    }
+    .laundary-info .info-title p,
+    .laundary-message .info-title p{
+        font-size: 16px;
+    }
+    .laundary-info .info-table,
+    .laundary-message .info-table{
+        padding-top: 15px;
+    }
+    .laundary-info .info-table .table-wrap table td:nth-child(4) {
+        width: 19%;
+    }
+    .payee-btn button{
+        padding: 9px;
+    }
+    .delivery-storage-wrap .payee-phone-num p:nth-child(2),
+    .delivery-storage-wrap .payee-phone-num .search-box .search input {
+        font-size: 14px;
+    }
+    .delivery-storage-wrap .payee-phone-num .payee-list span,
+    .delivery-storage-wrap .payee .payee-list span{
+        font-size: 14px;
+        padding-left: 8px;
+
+    }
+}
+@media all and (max-width:380px){
+    .start-wrap .btn-wrap p:first-child{
+        font-size: 30px;
+        padding-bottom: 17px;
+    }
+    .start-wrap .btn-wrap p:nth-child(2){
+        font-size: 17px;
+    }
+    .login-wrap .btn-wrap .btn-box button,
+    .login-input-box .btn-position,
+    .join-wrap .btn-wrap .btn-box button,
+    .resident-form-wrap .form-box .resident-gender button,
+    .delivery-form-wrap .notice button,
+    .delivery-form-wrap .delivery-division button{
+        font-size: 12px;
+    }
+
+    .login-wrap .login-info,
+    .join-wrap .join-info {
+        width: 73%;
+    }
+    .login-wrap .login-info p, .join-wrap .join-info p{
+        font-size: 18px;
+    }
+    .login-wrap .login-txtbox p,
+    .join-wrap .join-txtbox p{
+        font-size: 14px;
+    }
+    .login-wrap .resident-popUp,
+    .login-wrap .delivery-popUp, 
+    .resident-form-wrap .notice-wrap,
+    .delivery-form-wrap .notice-wrap,
+    .find-wrap .notice-find, 
+    .find-wrap .notice-incorrect,
+    .find-wrap .notice-wrap .notice1,
+    .find-wrap .notice-wrap .notice2,
+    .select_boxes .notice{
+        width: 85%;
+        height: 181px;
+        padding: 14px;
+    }
+    .login-wrap .notice .text-box p,
+    .resident-form-wrap .notice-wrap p,
+    .find-wrap .notice-find p,
+    .find-wrap .notice-incorrect p,
+    .find-wrap .notice-wrap .notice1 p,
+    .find-wrap .notice-wrap .notice2 p,
+    .select_boxes .notice-box p,
+    .delivery-form-wrap .notice-wrap p {
+        font-size: 14px;
+    }
+    .login-wrap .login-input-box span,
+    .join-wrap .login-input-box span{
+        font-size: 15px;
+    }
+    .join-wrap .join-txtbox p span{
+        font-size: 13px;
+    }
+
+    /* .login-wrap .popUp-wrap .resident-popUp,
+    .login-wrap .popUp-wrap .delivery-popUp{
+        width: 225px;
+    } */
+    .login-wrap .notice .text-box h2{
+        font-size: 18px;
+    }
+    .login-wrap .notice button,
+    .notice-box1 .notice button,
+    .notice-box2 .notice button,
+    .resident-form-wrap .notice button,
+    .join-wrap .btn-wrap .btn-box button,
+    .select_boxes .notice button, .select_boxes .notice1 button{
+        font-size: 13px;
+    }
+    .login-input-box label .textbox{
+        font-size: 14px;
+    }
+    .login-wrap .login-box .next-btn button,
+    .join-wrap .join-box .next-btn button,
+    .resident-form-wrap .form-wrap .next-btn button,
+    .my-info-wrap .correction-btn button,
+    .delivery-form-wrap .form-wrap .next-btn button{
+        font-size: 14px;
+    }
+
+    .resident-form-wrap .form-box span,
+    .delivery-form-wrap .form-box span{
+        font-size: 15px;
+    }
+    .resident-form-wrap .form-box input,
+    .delivery-form-wrap .form-box input{
+        font-size: 14px;
+    }
+    .resident-form-wrap .personal-info,
+    .delivery-form-wrap .personal-info {
+        width: 100%;
+    }
+    .resident-form-wrap .personal-info span,
+    .delivery-form-wrap .personal-info span{
+        font-size: 15px;
+    }
+    .delivery-form-wrap .delivery-text {
+        width: 80%;
+    }
+    .delivery-form-wrap .delivery-text p{
+        font-size: 14px;
+    }
+    .resident-form-wrap .form-box .resident-gender .gender-wrap {
+        width: 60%;
+    }
+
+    .nav li {
+        width: 28%;
+    }
+    .main-title h1::before{
+        width: 28px;
+        height: 32px;
+        bottom: 21px;
+    }
+    .nav li a::before{
+        top: -35px;
+    }
+    .resident-main-wrap .menu-container{
+        height: 430px;
+    }
+    .resident-main-wrap .menu-wrap ul li::after,
+    .delivery-main-wrap .menu-wrap ul li::after{
+        right: -1.5px;
+        font-size: 13px;
+    }
+    .resident-main-wrap .menu-wrap ul li a,
+    .delivery-main-wrap .menu-wrap ul li a{
+        width: 80px;
+        height: 80px;
+    }
+    .resident-main-wrap .menu-wrap ul li:first-child::before,
+    .delivery-main-wrap .menu-wrap ul li:first-child::before {
+        width: 25px;
+        height: 29px;
+    }
+    .resident-main-wrap .menu-wrap .delivery-menu li .menu-2::before,
+    .delivery-main-wrap .menu-wrap .delivery-menu li .menu-2::before{
+        width: 43px;
+        height: 40px;
+    }
+    .resident-main-wrap .menu-wrap .delivery-menu li .menu-3::before,
+    .delivery-main-wrap .menu-wrap .delivery-menu li .menu-3::before{
+        width: 46px;
+        height: 36px;
+    }
+    .resident-main-wrap .menu-wrap .laundary-menu li .menu-1::before,
+    .delivery-main-wrap .menu-wrap .laundary-menu li .menu-1::before{
+        height: 35px;
+    }
+    .resident-main-wrap .menu-wrap .laundary-menu li .menu-2::before,
+    .delivery-main-wrap .menu-wrap .laundary-menu li .menu-2::before{
+        height: 30px;
+    }
+    .resident-main-wrap .menu-wrap .laundary-menu li .menu-3::before,
+    .delivery-main-wrap  .menu-wrap .laundary-menu li .menu-3::before{
+        width: 46px;
+        height: 39px;
+    }
+    .nav li a::before{
+        width: 26px;
+        height: 29px;
+    }
+    .info-wrap .info-btn-wrap .btn-box .btn a{
+        font-size: 14px;
+        padding: 48px 30px;
+    }
+    .mypage-wrap .mypage-title p {
+        font-size: 15px;
+    }
+    .mypage-wrap .point-box, .mypage-wrap .point-box .point-amount span {
+        font-size: 13px;
+    }
+    .my-info-wrap .info{
+        flex-wrap: wrap;
+        width: 90%;
+        margin: 0 auto;
+    }
+    .mypage-wrap .point .btn button {
+        font-size: 12px;
+    }
+    .my-info-wrap .my-info-box .info-box{
+        width: 100%;
+    }
+    .my-info-wrap .text-area .resident-gender .gender-wrap{
+        width: 60%;
+    }
+    .my-info-wrap .text-area .resident-gender button{
+        font-size: 13px;
+    }
+    .my-info-wrap .text-area input {
+        width: 77%;
+        display: inline-block;
+        font-size: 13px;
+    }
+    .my-info-wrap .text-area span{
+        width: 21%;
+        font-size: 13px;
+    }
+    .my-info-wrap .my-info-box .info-box button {
+        font-size: 13px;
+    }
+    .my-info-wrap .my-info-box .info-text p {
+        font-size: 15px;
+    }
+    .my-info-wrap .correction-btn input {
+        font-size: 14px;
+    }
+    .my-info-wrap .info-change1 p:nth-child(2),
+    .my-info-wrap .info-change2 p:nth-child(2){
+        font-size: 14px;
+    }
+    .my-info-wrap .info-change1 input,
+    .my-info-wrap .info-change2 input,
+    .my-info-wrap .info-change1 button,
+    .my-info-wrap .info-change2 button{
+        font-size: 13px;
+    }
+    .my-info-wrap .info-change1{
+        width: 253px;
+        height: 217px;
+    }
+    .my-info-wrap .info-change2,
+    .notice-box1 .notice, .notice-box2 .notice,
+    .select_boxes .notice, .select_boxes .notice1 {
+        width: 253px;
+        height: 181px;
+        padding: 14px;
+    }
+    .notice-box1 .notice p:first-child,
+    .notice-box2 .notice p:first-child,
+    .select_boxes .notice p:first-child,
+    .select_boxes .notice1 p:first-child{
+        font-size: 18px;
+    }
+    .notice-box1 .notice p,
+    .notice-box2 .notice p,
+    .select_boxes .notice p,
+    .select_boxes .notice1 p{
+        font-size: 14px;
+    }
+    .find-wrap .delivery-find .title-bg,
+    .find-wrap .laundary-find .title-bg{
+        width: 80px;
+        height: 80px;
+    }
+    .find-wrap .find-textbox span, .find-wrap .find-textbox input {
+        font-size: 14px;
+    }
+    .notice-box1 .notice p {
+        line-height: 19px;
+    }
+    .find-wrap .find-textbox input {
+        width: 75%;
+    }
+    .find-wrap .find-textbox span {
+        width: 23%;
+    }
+    .find-wrap .home-btn {
+        padding-top: 13px;
+    }
+    .find-wrap .delivery-home .btn button {
+        font-size: 12px;
+        padding: 7px;
+    }
+    .find-wrap .delivery-home .home-text p{
+        font-size: 13px;
+    }
+    
+    .find-wrap .delivery-home .home-pw input {
+        padding: 6px 5px;
+        font-size: 13px;
+    }
+    .find-wrap .notice-wrap .notice1 p:nth-child(2){
+        line-height: 62px;
+    }
+    .find-wrap .notice-btn button{
+        font-size: 13px;
+    }
+    .select_boxes .notice-box input{
+        margin-top: 25px;
+    }
+    .return-wrap .return-pw-box .password .pwBox{
+        width: 95%;
+    }
+    .return-wrap .return-pw-box > p {
+        font-size: 17px;
+    }
+    /* .laundary-info .laundary-bg, .laundary-message .laundary-bg {
+        width: 56px;
+        height: 56px;
+    } */
+ 
+    .laundary-info .info-table .table-wrap table th,
+    .laundary-message .info-table .table-wrap table th {
+        font-size: 12px;
+    }
+    .laundary-info .info-table .table-wrap table td{
+        padding: 15px 0;
+    }
+    .laundary-info .info-table .table-wrap table td,
+    .laundary-message .info-table .table-wrap table td {
+        font-size: 11px;
+    }
+    .laundary-info .info-table .table-wrap table td:nth-child(2) {
+        width: 14%;
+    }
+    .laundary-info .info-table .table-wrap table td:nth-child(3) {
+        width: 29%;
+    }
+    .laundary-info .info-table .table-wrap table td:nth-child(4) {
+        width: 21%;
+    }
+    .laundary-info .info-table, .laundary-message .info-table{
+        padding: 0;
+    }
+    .laundary-storage-wrap .laundary-storage-info span{
+        width: 23%;
+    }
+    .laundary-storage-wrap .laundary-storage-info #name,
+    .laundary-storage-wrap .laundary-storage-info input,
+    .laundary-storage-wrap .laundary-storage-info span,
+    .laundary-storage-wrap .laundary-btn .laundary-memo textarea{
+        font-size: 14px;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info > div span,
+    .laundary-pickup-wrap .laundary-pickup-info input,
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info .laundary-memo textarea,
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info .date-box .place select,
+    .laundary-pickup-wrap .laundary-pickup-info #name{
+        font-size: 14px;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info .address input {
+        font-size: 12px;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info > div span{
+        width: 23%;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info .info-text p{
+        padding-left: 16px;
+        font-size: 16px;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info .date-box .date label input{
+        font-size: 12px;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info .date-box .date label{
+        width: 100%;
+    }
+    .laundary-pickup-wrap .notice-wrap{
+        width: 253px;
+        height: 181px;
+        padding: 14px;
+    }
+    .laundary-pickup-wrap .notice-wrap p:first-child{
+        font-size: 17px;
+    }
+    .laundary-pickup-wrap .notice-wrap p:nth-child(2){
+        font-size: 14px;
+        line-height: 60px;
+    }
+    .laundary-pickup-wrap .notice-wrap .notice-btn button{
+        font-size: 13px;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info .date-box .date .datetext {
+        font-size: 12px;
+    }
+    .delivery-storage-wrap .delivery-storage-box .title-bg{
+        width: 80px;
+        height: 80px;
+    }
+    .delivery-storage-wrap .storage-box input,
+    .delivery-storage-wrap .storage-box .code-box span,
+    .delivery-storage-wrap .storage-box .search-box .text-box p,
+    .delivery-storage-wrap .storage-box .num-box .user-num select{
+        font-size: 13px;
+    }
+    .delivery-storage-wrap .storage-box .num-box .user-num .num-btn button,
+    .delivery-storage-wrap .storage-box .phone-num button{
+        padding: 11px 18px;
+    }
+    .delivery-storage-wrap .storage-box .search-box .text-box p:first-child{
+        font-size: 16px;
+    }
+    .delivery-storage-wrap .storage-box .code-box span {
+        width: 23%;
+    }
+    .delivery-storage-wrap .payee-phone-num{
+        width: 253px;
+    }
+    .delivery-storage-wrap .payee {
+        width: 81%;
+    }
+    .delivery-storage-wrap .payee-phone-num .payee-list > div,
+    .delivery-storage-wrap .payee .payee-list > div{
+        padding: 8px 0;
+    }
+    .delivery-cancle-wrap .delivery-cancle-box .title-bg{
+        width: 80px;
+    }
+    .delivery-list-wrap .delivery-list-box .list-box p{
+        font-size: 16px;
+    }
+    .delivery-cancle-wrap .delivery-cancle-box .code-box p{
+        font-size: 16px;
+    }
+    
+    .delivery-cancle-wrap .delivery-cancle-box .code-box .code input,
+    .delivery-cancle-wrap .delivery-cancle-box button{
+        font-size: 14px;
+    }
+    .delivery-list-wrap .delivery-list-box .list-box .title-bg{
+        width: 80px;
+        height: 80px;
+    }
+    .delivery-list-wrap .delivery-list-box .list-box .list table tr td {
+        font-size: 12px;
+    }
+    .delivery-list-wrap .delivery-list-box .list-box .list table tr td:first-child{
+        width: 34px;
+    }
+    .delivery-list-wrap .delivery-list-box .list-box .list table tr td:nth-child(2){
+        width: 27%;
+    }
+    .delivery-list-wrap .delivery-list-box .list-box .list table td button{
+        font-size: 11px;
+        padding: 7px;
+    }
+    .delivery-list-wrap .notice-wrap{
+        width: 253px;
+        height: 181px;
+        padding: 14px;
+    }
+    .delivery-list-wrap .notice-wrap p:nth-child(2),
+    .delivery-list-wrap .notice-wrap p:nth-child(3){
+        font-size: 14px;
+    }
+    .delivery-return-wrap .delivery-return-box .title-bg{
+        width: 80px;
+        height: 80px;
+    }
+    .delivery-return-wrap .delivery-return-box .code-box p{
+        font-size: 16px;
+    }
+    .delivery-return-wrap .delivery-return-box .code-box .code input,
+    .delivery-return-wrap .delivery-return-box button{
+        font-size: 14px;
+    }
+    .delivery-return-pw-wrap .delivery-return-pw-box .return-pw p{
+        font-size: 15px;
+    }
+    .delivery-return-pw-wrap .delivery-return-pw-box .return-pw .pw-box input,
+    .delivery-return-pw-wrap .delivery-return-pw-box .return-pw .pw-btn button,
+    .delivery-return-pw-wrap .delivery-return-pw-box .text-box2 p{
+        font-size: 14px;
+    }
+    .delivery-return-pw-wrap .notice-wrap .pw-correct,
+    .delivery-return-pw-wrap .notice-wrap .pw-incorrect{
+        width: 253px;
+        height: 181px;
+        padding: 14px;
+    }
+    .delivery-return-pw-wrap .notice-wrap .pw-correct p {
+        font-size: 14px;
+    }
+    .delivery-return-pw-wrap .notice-wrap .pw-correct p:first-child,
+    .delivery-return-pw-wrap .notice-wrap .pw-incorrect p:first-child{
+        font-size: 18px;
+    }
+    .delivery-return-pw-wrap .notice-wrap .pw-correct button,
+    .delivery-return-pw-wrap .notice-wrap .pw-incorrect button{
+        font-size: 13px;
+    }
+    .delivery-return-pw-wrap .notice-wrap .pw-incorrect p:nth-child(2){
+        font-size: 14px;
+    }
+    .laundaryman-find-code-wrap .laundary-find-box .title-bg{
+        width: 80px;
+        height: 80px;
+    }
+    .laundaryman-find-code-wrap .laundary-find-box .code-box p{
+        font-size: 16px;
+    }
+    .laundaryman-find-code-wrap .laundary-find-box .code-box .code input{
+        font-size: 14px;
+    }
+
+    .laundaryman-find-wrap .laundary-find .find-box .title-bg{
+        width: 80px;
+        height: 80px;
+    }
+    .laundaryman-find-wrap .laundary-find .find-textbox span{
+        width: 23%;
+    }
+    .laundaryman-find-wrap .laundary-find .find-textbox input,
+    .laundaryman-find-wrap .laundary-find .find-textbox span,
+    .laundaryman-find-wrap .laundary-find .find-textbox textarea{
+        font-size: 14px;
+    }
+    .laundaryman-find-wrap .notice-wrap{
+        width: 253px;
+        height: 181px;
+        padding: 14px;
+    }
+    .laundaryman-find-wrap .notice-wrap p:nth-child(2){
+        font-size: 14px;
+        line-height: 62px;
+    }
+    .laundaryman-find-wrap .notice-wrap button{
+        font-size: 13px;
+    }
+    .laundary-list-wrap .laundary-list-box .laundary-bg{
+        width: 80px;
+        height: 80px;
+    }
+    .laundary-list-wrap .laundary-list-box .list-title p{
+        font-size: 16px;
+    }
+    .laundary-list-wrap .laundary-list-box .table-wrap table{
+        width: 95%;
+    }
+    .laundary-list-wrap .laundary-list-box .table-wrap table th{
+        font-size: 13px;
+    }
+    .laundary-list-wrap .laundary-list-box .table-wrap table td{
+        font-size: 12px;
+    }
+    .delivery-list-wrap .delivery-list-box .list-box .list table tr th{
+        font-size: 12px;
+    }
+    .laundary-check-list-wrap .laundary-check-list-box .list-box .title-bg,
+    .laundary-factory-list-wrap .laundary-factory-list-box .list-box .title-bg,
+    .laundary-factory-outlist-wrap .laundary-factory-outlist-box .title-bg{
+        width: 80px;
+        height: 80px;
+    }
+    .laundary-check-list-wrap .laundary-check-list-box .list-box p,
+    .laundary-factory-list-wrap .laundary-factory-list-box .list-box p,
+    .laundary-factory-outlist-wrap .laundary-factory-outlist-box .list-box p{
+        font-size: 16px;
+    }
+    .laundary-check-list-wrap .laundary-check-list-box .list-textbox span,
+    .laundary-factory-outlist-wrap .laundary-factory-outlist-box .list-textbox span,
+    .deliveryman-memo span{
+        width: 23%;
+    }
+    .laundary-check-list-wrap .laundary-check-list-box .list-textbox .laundary-cost input {
+        width: 47%;
+    }
+    .laundary-check-list-wrap .laundary-check-list-box .list-textbox span,
+    .laundary-factory-list-wrap .laundary-factory-list-box .list-textbox span,
+    .laundary-check-list-wrap .laundary-check-list-box .list-textbox input,
+    .laundary-factory-list-wrap .laundary-factory-list-box .list-textbox input,
+    .laundary-check-list-wrap .laundary-check-list-box .list-textbox .laundary-memo textarea,
+    .laundary-factory-list-wrap .laundary-factory-list-box .list-textbox .laundary-memo textarea,
+    .laundary-factory-outlist-wrap .laundary-factory-outlist-box .list-textbox span,
+    .laundary-factory-outlist-wrap .laundary-factory-outlist-box .list-textbox input,
+    .laundary-factory-outlist-wrap .laundary-factory-outlist-box .list-textbox .laundary-memo textarea,
+    .deliveryman-memo span, .deliveryman-memo textarea{
+        font-size: 14px;
+    }
+    .laundary-check-list-wrap .laundary-check-list-box .list-textbox .laundary-cost button{
+        font-size: 12px;
+    }
+    .laundaryman-storage-wrap .laundaryman-box .list-box .title-bg{
+        width: 80px;
+        height: 80px;
+    }
+    .laundaryman-storage-wrap .laundaryman-box .list-box p{
+        font-size: 16px;
+    }
+    .laundary-factory-list-wrap .laundary-factory-list-box .list-textbox span,
+    .laundary-factory-outlist-wrap .laundary-factory-outlist-box .list-textbox span{
+        width: 23%;
+    }
+    .laundaryman-storage-wrap .laundaryman-box .list-textbox span{
+        width: 23%;
+    }
+    .laundaryman-storage-wrap .laundaryman-box .list-textbox span,
+    .laundaryman-storage-wrap .laundaryman-box .list-textbox input,
+    .laundaryman-storage-wrap .laundaryman-box .list-textbox textarea{
+        font-size: 14px;
+    }
+    .laundaryman-storage-wrap .laundaryman-box .btn button{
+        font-size: 14px;
+    }
+    .laundaryman-storage-wrap .notice-box{
+        width: 253px;
+        height: 181px;
+        padding: 14px;
+    }
+
+    .laundaryman-storage-wrap .notice-box button {
+        font-size: 13px;
+    }
+    .laundaryman-storage-code-wrap .laundaryman-storage-code-box .storage-box .title-bg{
+        width: 80px;
+        height: 80px;
+    }
+    .laundaryman-storage-code-wrap .laundaryman-storage-code-box .code-box p{
+        font-size: 16px;
+    }
+
+    .laundaryman-storage-code-wrap .laundaryman-storage-code-box .code-box .code input,
+    .laundaryman-storage-code-wrap .btn-wrap button,
+    .laundaryman-storage-code-wrap .list-btn button{
+        font-size: 14px;
+    }
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .list-box .title-bg{
+        width: 80px;
+        height: 80px;
+    }
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .list-box p{
+        font-size: 16px;
+    }
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .list-textbox span{
+        width: 25%;
+    }
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .list-textbox span,
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .list-textbox input,
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .list-textbox .laundary-memo textarea,
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .list-textbox .laundary-pickup-time button,
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .btn button{
+        font-size: 14px;
+    }
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .list-textbox .laundary-pickup-time input{
+        width: 40%;
+    }
+    .laundaryman-pickup-wrap .notice{
+        width: 253px;
+        height: 181px;
+        padding: 14px;
+    }
+    .laundaryman-pickup-wrap .notice form input, .laundaryman-pickup-wrap .notice button{
+        font-size: 13px;
+    }
+    .point-wrap .point-title .title-bg{
+        width: 80px;
+        height: 80px;
+    }
+    .point-wrap .point-title p{
+        font-size: 16px;
+    }
+    .point-wrap .point-box .amount-box p,
+    .point-wrap .point-box .means-box p{
+        font-size: 15px;
+    }
+    .point-wrap .point-box .amount-box div > button,
+    .point-wrap .point-box .means-box > div button,
+    .point-wrap .charge-btn button{
+        font-size: 13px;
+    }
+    .point-wrap .notice{
+        width: 253px;
+        height: 181px;
+        padding: 14px;
+    }
+    .point-wrap .notice button {
+        font-size: 13px;
+    }
+    .point-wrap .notice p:nth-child(2) {
+        font-size: 14px;
+    }
+    .point-wrap .point-box .point-text{
+        width: 253px;
+        height: 181px;
+        padding: 14px;
+    }
+    .point-wrap .point-box .point-text p{
+        font-size: 16px;
+        padding-bottom: 26px;
+    }
+    .point-wrap .point-box .point-text input,
+    .point-wrap .point-box .point-text .btn-wrap button{
+        font-size: 13px;
+    }
+}
+@media all and (max-width:320px){
+    .start-wrap .btn-wrap p:first-child {
+        font-size: 26px;
+        padding-bottom: 11px;
+    }
+    .start-wrap .btn-wrap p:nth-child(2) {
+        font-size: 14px;
+    }
+    .start-wrap .btn-wrap .btn{
+        font-size: 13px;
+    }
+
+    /* 로그인 공통 */
+    .login-wrap .login-txtbox h2,
+    .login-wrap .login-info p,
+    .login-wrap .notice .text-box h2,
+    
+    /* 회원가입 공통 */
+    .join-wrap .join-txtbox h2,
+    .join-wrap .join-info p,
+
+    /* 입주민 회원가입 */
+    .resident-form-wrap .resident-form-title h2,
+    .resident-form-wrap .notice-wrap p:first-child,
+    
+    /* 택배기사 회원가입 */
+    .delivery-form-wrap .delivery-form-title h2,
+    .delivery-form-wrap .notice-wrap p:first-child,
+
+    .notice-box1 .notice p:first-child,
+    .notice-box2 .notice p:first-child,
+    
+    /* 택배보관 */
+    .select_boxes .notice p:first-child,
+    .select_boxes .notice1 p:first-child,
+    /* 택배찾기 */
+    .find-wrap .delivery-home .home-text p:first-child,
+    .find-wrap .notice-find p:first-child,
+    .find-wrap .notice-incorrect p:first-child,
+    .find-wrap .notice-wrap .notice1 p:first-child,
+    .find-wrap .notice-wrap .notice2 p:first-child {
+        font-size: 17px;
+    }
+    .login-wrap .login-txtbox p,
+    .join-wrap .join-txtbox p {
+        font-size: 13px;
+    }
+    .login-wrap .btn-wrap,
+    .join-wrap .btn-wrap {
+        width: 95%;
+    }
+    .login-wrap .login-box{
+        padding: 55px 0;
+        border-radius: 30px 30px 0 0;
+    }
+
+    .login-wrap .btn-wrap .btn-box button,
+    .login-wrap .login-input-box .btn-position button,
+    .join-wrap .btn-wrap .btn-box button,
+    .find-wrap .find-btn button, .find-wrap .home-btn button,
+    .select_boxes .notice button, .select_boxes .notice1 button,
+    .resident-form-wrap .form-box .resident-gender button,
+    .find-wrap .notice-btn button, .find-wrap .find-btn button,
+    .find-wrap .home-btn button,
+    .delivery-form-wrap .delivery-division button{
+        font-size: 12px;
+    }
+
+    .login-wrap .login-info, .join-wrap .join-info {
+        width: 80%;
+    }
+
+    .login-wrap .login-input-box > div{
+        font-size: 15px;
+    }
+
+    .login-wrap .login-input-box label .textbox,
+    .login-input-box label .textbox{
+        font-size: 12px;
+    }
+
+    .login-input-box label .textbox[type="text"]::placeholder{
+        font-size: 12px;
+    }
+
+    .login-wrap .notice.text-box p{
+        font-size: 13px;
+    }
+    .login-wrap .notice button{
+        font-size: 12px;
+    }
+    .login-wrap .popUp-wrap .resident-popUp,
+    .login-wrap .popUp-wrap .delivery-popUp{
+        width: 240px;
+        padding: 8px;
+    }
+    .join-wrap .join-txtbox p span {
+        font-size: 12px;
+    }
+    .resident-form-wrap .form-box span,
+    .delivery-form-wrap .form-box span {
+        font-size: 14px;
+    }
+    .resident-form-wrap .form-box input,
+    .delivery-form-wrap .form-box input {
+        font-size: 13px;
+    }
+    .resident-form-wrap .personal-info span,
+    .delivery-form-wrap .personal-info span{
+        font-size: 13px;
+    }
+    .resident-form-wrap .notice-wrap p{
+        line-height: 40px;
+    }
+    .delivery-form-wrap .delivery-text {
+        width: 90%;
+    }
+    .delivery-form-wrap .delivery-text p {
+        font-size: 13px;
+    }
+    .main-title h1::before{
+        width: 22px;
+        height: 25px;
+        bottom: 25px;
+        left: 23%;
+    }
+    .resident-main-wrap .menu-container{
+        height: 390px;
+    }
+    .resident-main-wrap .menu-wrap ul li:first-child,
+    .delivery-main-wrap .menu-wrap ul li:first-child{
+        font-size: 14px;
+    }
+    .resident-main-wrap .menu-wrap ul li:first-child::before,
+    .delivery-main-wrap .menu-wrap ul li:first-child::before{
+        width: 21px;
+        height: 29px;
+    }
+    .resident-main-wrap .menu-wrap ul li a,
+    .delivery-main-wrap .menu-wrap ul li a{
+        font-size: 12px;
+        width: 60px;
+        height: 60px;
+    }
+    .resident-main-wrap .menu-wrap ul li a::before,
+    .delivery-main-wrap .menu-wrap ul li a::before{
+        top: 15px;
+    }
+    .resident-main-wrap .menu-wrap .delivery-menu li .menu-2::before,
+    .delivery-main-wrap .menu-wrap .delivery-menu li .menu-2::before{
+        width: 39px;
+        height: 36px;
+        top: 10px;
+    }
+    .resident-main-wrap .menu-wrap .delivery-menu li .menu-3::before,
+    .delivery-main-wrap .menu-wrap .delivery-menu li .menu-3::before{
+        width: 43px;
+        height: 30px;
+        top: 16px
+    }
+    .resident-main-wrap .menu-wrap .laundary-menu li .menu-1::before,
+    .delivery-main-wrap .menu-wrap .laundary-menu li .menu-1::before {
+        height: 31px;
+        top: 14px;
+    }
+    .resident-main-wrap .menu-wrap .laundary-menu li .menu-2::before,
+    .delivery-main-wrap  .menu-wrap .laundary-menu li .menu-2::before{
+        height: 29px;
+    }
+    .resident-main-wrap .menu-wrap .laundary-menu li .menu-3::before,
+    .delivery-main-wrap .menu-wrap .laundary-menu li .menu-3::before{
+        height: 29px;
+        top: 19px;
+    }
+    .resident-main-wrap .menu-wrap ul li::after,
+    .delivery-main-wrap .menu-wrap ul li::after {
+        right: -3px;
+        font-size: 11px;
+        top: 2px;
+    }
+    .resident-main-wrap .menu-wrap ul li a::after,
+    .delivery-main-wrap .menu-wrap ul li a::after{
+        width: 20px;
+        height: 20px;
+    }
+    .nav li a{
+        font-size: 12px;
+    }
+    .nav-menu{
+        width: 100%;
+    }
+    .info-wrap .info-btn-wrap .btn-box .btn a{
+        font-size: 13px;
+        padding: 48px 30px;
+    }
+    .info-wrap .info-btn-wrap .btn-box .btn .bg{
+        width: 122px;
+    }
+    .info-wrap .info-btn-wrap .btn-box .box1 .bg,
+    .info-wrap .info-btn-wrap .btn-box .box3 .bg{
+        margin-right: 25px;
+    }
+    .info-wrap .info-btn-wrap .btn-box .box2 .bg,
+    .info-wrap .info-btn-wrap .btn-box .box4 .bg{
+        margin-left:25px;
+    }
+    .info-wrap .info-btn-wrap .btn-box .deco-bg{
+        width: 130px;
+        height: 130px;   
+    }
+    .info-wrap .info-btn-wrap .btn-box .box1 .deco-bg{
+        right: -22px;
+        top: -5px;
+    }
+    .info-wrap .info-btn-wrap .btn-box .box3 .deco-bg {
+        right: -50px;
+        bottom: -31px;
+    }
+    .info-wrap .info-btn-wrap .btn-box .box4 .deco-bg {
+        top: -36px;
+    }
+
+    .return-wrap .return-btn button {
+        font-size: 13px;
+    }
+    .mypage-wrap .mypage-box{
+        width: 91%;
+    }
+    
+    .mypage-wrap .edit {
+        padding: 25px 0;
+    }
+    .mypage-wrap .point .btn button{
+        font-size: 11px;
+        padding: 12px 10px;
+    }
+    
+
+    .mypage-wrap .edit .edit-btn button{
+        font-size: 13px;
+        padding: 17px 16px;
+    }
+    .mypage-wrap .edit p span, .mypage-wrap .point p span {
+        font-size: 14px;
+    }
+    .mypage-wrap .edit p, .mypage-wrap .point > p {
+        font-size: 13px;
+    }
+    .mypage-wrap .point-box .point-amount {
+        width: 56%;
+        margin-left: 9px;
+    }
+    .mypage-wrap .point-box, .mypage-wrap .point-box .point-amount span {
+        font-size: 12px;
+    }
+    .my-info-wrap .my-info-box .info-box button {
+        font-size: 12px;
+    }
+    .my-info-wrap .info-change1 p:first-child,
+    .my-info-wrap .info-change2 p:first-child{
+        font-size: 17px;
+    }
+    .select_boxes .notice-box button{
+        padding: 7px 0;
+    }
+    .notice-box1 .notice, .notice-box2 .notice,
+    .select_boxes .notice, .select_boxes .notice1 {
+        width: 238px;
+        height: 164px;
+        padding: 14px;
+    }
+    .my-info-wrap .text-area .resident-gender button{
+        font-size: 12px;
+    }
+    .my-info-wrap .info-change1 input, .my-info-wrap .info-change2 input,
+    .my-info-wrap .info-change1 button, .my-info-wrap .info-change2 button{
+        font-size: 12px;
+    }
+    .notice-box1 .notice p:first-child,
+    .notice-box2 .notice p:first-child,
+    .select_boxes .notice p:first-child,
+    .select_boxes .notice1 p:first-child {
+        font-size: 17px;
+    }
+    .notice-box1 .notice p,
+    .notice-box2 .notice p,
+    .select_boxes .notice p {
+        line-height: 16px;
+        font-size: 12px;
+    }
+
+
+    .find-wrap .find-textbox span, .find-wrap .find-textbox input {
+        font-size: 13px;
+    }
+    .find-wrap .find-textbox span {
+        width: 25%;
+    }
+    .find-wrap .find-textbox input {
+        width: 73%;
+    }
+    .find-wrap .find-btn {
+        padding-top: 56px;
+    }
+    .find-wrap .find-btn input, .find-wrap .home-btn input {
+        font-size: 12px;
+    }
+    .find-wrap .laundary-find .find-textbox .laundary-memo textarea{
+        width: 74%;
+    }
+    .select_box_num>span, .select_box_special span {
+        font-size: 12px;
+    }
+    .select_boxes .notice1 p{
+        line-height: 29px;
+    }
+
+    .laundary-info .info-table .table-wrap table th,
+    .laundary-message .info-table .table-wrap table th{
+        font-size: 11px;
+    }
+    .laundary-info .info-table .table-wrap table th span {
+        font-size: 10px;
+    }
+    .laundary-info .info-table .table-wrap table td,
+    .laundary-message .info-table .table-wrap table td{
+        font-size: 11px;
+    }
+    .laundary-info .info-table .table-wrap table td:nth-child(3) {
+        width: 15%;
+    }
+    .laundary-info .info-table .table-wrap table td:nth-child(4) {
+        width: 21%;
+    }
+    .laundary-message .info-table .table-wrap table td:nth-child(4){
+        width: 22%;
+    }
+
+    .laundary-info .info-table .table-wrap table td:nth-child(5) {
+    width: 17%;
+    }
+    .laundary-storage-wrap .laundary-storage-info #name, .laundary-storage-wrap .laundary-storage-info input, .laundary-storage-wrap .laundary-storage-info span, .laundary-storage-wrap .laundary-btn .laundary-memo textarea{
+        font-size: 13px;
+    }
+    .laundary-storage-wrap .laundary-storage-info .laundary-memo textarea{
+        width: 74%;
+    }
+    .laundary-storage-wrap .laundary-btn button{
+        font-size: 12px;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info {
+        width: 88%;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info .address input {
+        font-size: 11px;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info > div span,
+    .laundary-pickup-wrap .laundary-pickup-info input,
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info .laundary-memo textarea,
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info .date-box .place select,
+    .laundary-pickup-wrap .laundary-pickup-info #name{
+        font-size: 13px;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info .info-text p {
+        padding-left: 12px;
+        font-size: 15px;
+    }
+    .laundary-pickup-wrap .laundary-btn button {
+        font-size: 12px;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info .date-box .date label input{
+        width: 47%;
+    }
+    .laundary-pickup-wrap .notice-wrap{
+        width: 253px;
+        height: 181px;
+        padding: 14px;
+    }
+    .laundary-pickup-wrap .notice-wrap .notice-btn button{
+        font-size: 12px;
+    }
+    .laundary-pickup-wrap .laundary-pickup-info .laundary-info .date-box .date .datetext {
+        font-size: 11px;
+    }
+    .laundary-pickup-wrap .notice p:first-child{
+        font-size: 17px;
+    }
+    .laundary-pickup-wrap .notice .notice-btn button{
+        font-size: 12px;
+    }
+    .delivery-storage-wrap .storage-box input,
+    .delivery-storage-wrap .storage-box .code-box span,
+    .delivery-storage-wrap .storage-box .search-box .text-box p,
+    .delivery-storage-wrap .storage-box .num-box .user-num select{
+        font-size: 13px;
+    }
+    .delivery-storage-wrap .delivery-storage-btn button,
+    .delivery-storage-wrap .storage-box .phone-num button,
+    .delivery-storage-wrap .storage-box .num-box .user-num .num-btn button{
+        font-size: 12px;
+    }
+    .delivery-storage-wrap .storage-box .search-box .text-box p:first-child{
+        font-size: 15px;
+    }
+    .delivery-storage-wrap .storage-box .search-box .text-box p {
+        padding: 10px 4px;
+    }
+    .delivery-storage-wrap .payee-phone-num, 
+    .delivery-storage-wrap .payee{
+        width: 89%;
+    }
+    .delivery-storage-wrap .payee-phone-num p:first-child{
+        font-size: 17px;
+    }
+    .delivery-storage-wrap .payee-phone-num .search-box .search button, .payee-btn button {
+        font-size: 12px;
+    }
+    .delivery-storage-wrap .payee-phone-num .search-box .search button{
+        padding: 8px;
+    }
+    .delivery-storage-wrap .payee-phone-num p:nth-child(2),
+    .delivery-storage-wrap .payee-phone-num p:nth-child(3),
+    .delivery-storage-wrap .payee-phone-num .search-box .search input,
+    .delivery-storage-wrap .payee p:nth-child(2){
+        font-size: 13px;
+    }
+    .delivery-storage-wrap .payee-phone-num .payee-list > div input {
+        width: 14px;
+        height: 14px;
+    }
+    .delivery-storage-wrap .payee .payee-list > div .name {
+        width: 23%;
+    }
+    .delivery-cancle-wrap .delivery-cancle-box .code-box .code input{
+        font-size: 13px;
+    }
+    .delivery-cancle-wrap .delivery-cancle-box button{
+        font-size: 12px;
+    }
+    .delivery-list-wrap .delivery-list-box .list-box .list table tr th {
+        font-size: 11px;
+    }
+    .delivery-list-wrap .delivery-list-box .list-box .list table td button{
+        padding: 5px;
+        font-size: 10px;
+    }
+    .delivery-list-wrap .delivery-list-box .list-box .list table tr td {
+        font-size: 11px;
+        padding: 17px 0;
+    }
+    .delivery-list-wrap .delivery-list-box .list-box .list table td input {
+        width: 13px;
+        height: 13px;
+    }
+
+    .delivery-list-wrap .notice-wrap p:first-child{
+        font-size: 17px;
+    }
+    .delivery-list-wrap .notice-wrap button {
+        font-size: 12px;
+    }
+    .delivery-return-wrap .delivery-return-box .code-box .code input{
+        font-size: 13px;
+    }
+    .delivery-return-wrap .delivery-return-box button{
+        font-size: 12px;
+    }
+    .delivery-return-pw-wrap .delivery-return-pw-box .return-pw .pw-box input,
+    .delivery-return-pw-wrap .delivery-return-pw-box .return-pw .pw-btn button,
+    .delivery-return-pw-wrap .delivery-return-pw-box .text-box2 p {
+        font-size: 13px;
+    }
+    .delivery-return-pw-wrap .notice-wrap .pw-correct,
+    .delivery-return-pw-wrap .notice-wrap .pw-incorrect{
+        width: 238px;
+        height: 164px;
+        padding: 14px;
+    }
+    .delivery-return-pw-wrap .notice-wrap .pw-correct p:first-child,
+    .delivery-return-pw-wrap .notice-wrap .pw-incorrect p:first-child {
+        font-size: 17px;
+    }
+    .delivery-return-pw-wrap .notice-wrap .pw-correct p{
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .delivery-return-pw-wrap .notice-wrap .pw-correct button,
+    .delivery-return-pw-wrap .notice-wrap .pw-incorrect button{
+        font-size: 12px;
+        padding: 7px 0;
+    }
+    .laundaryman-find-code-wrap .laundary-find-box .code-box .code input{
+        font-size: 13px;
+    }
+    .laundaryman-find-code-wrap .btn-wrap button, .laundaryman-find-code-wrap .list-btn button{
+        font-size: 12px;
+    }
+    .laundaryman-find-wrap .laundary-find .find-textbox span{
+        width: 25%;
+    }
+    .laundaryman-find-wrap .laundary-find .find-textbox input{
+        width: 73%;
+    }
+    .laundaryman-find-wrap .laundary-find .find-textbox input,
+    .laundaryman-find-wrap .laundary-find .find-textbox span,
+    .laundaryman-find-wrap .laundary-find .find-textbox textarea{
+        font-size: 13px;
+    }
+    .laundaryman-find-wrap .laundary-find .find-textbox .laundary-memo textarea{
+        width: 74%;
+    }
+    .laundaryman-find-wrap .find-btn button{
+        font-size: 12px;
+    }
+    .laundaryman-find-wrap .notice-wrap p:first-child{
+        font-size: 17px;
+    }
+
+    .laundaryman-find-wrap .notice-wrap button{
+        font-size: 12px;
+    }
+    .laundary-list-wrap .laundary-list-box .table-wrap table th{
+        font-size: 12px;
+    }
+    .laundary-list-wrap .laundary-list-box .table-wrap table td{
+        font-size: 11px;
+    }
+    .laundary-check-list-wrap .laundary-check-list-box .list-textbox span,
+    .laundary-factory-list-wrap .laundary-factory-list-box .list-textbox span,
+    .laundary-check-list-wrap .laundary-check-list-box .list-textbox input,
+    .laundary-factory-list-wrap .laundary-factory-list-box .list-textbox input,
+    .laundary-check-list-wrap .laundary-check-list-box .list-textbox .laundary-memo textarea,
+    .laundary-factory-list-wrap .laundary-factory-list-box .list-textbox .laundary-memo textarea,
+    .laundary-factory-outlist-wrap .laundary-factory-outlist-box .list-textbox span,
+    .laundary-factory-outlist-wrap .laundary-factory-outlist-box .list-textbox input,
+    .laundary-factory-outlist-wrap .laundary-factory-outlist-box .list-textbox  .laundary-memo  textarea,
+    .deliveryman-memo span, .deliveryman-memo textarea{
+        font-size: 13px;
+    }
+    .laundary-check-list-wrap .laundary-check-list-box .btn button,
+    .laundary-factory-list-wrap .laundary-factory-list-box .btn button{
+        font-size: 13px;
+    }
+    .laundary-check-list-wrap .laundary-check-list-box .list-textbox .laundary-cost button{
+        font-size: 11px;
+    }
+    .laundary-factory-list-wrap .laundary-factory-list-box .list-textbox span,
+    .laundary-factory-outlist-wrap .laundary-factory-outlist-box .list-textbox span{
+        width: 23%;
+    }
+    .laundaryman-storage-wrap .laundaryman-box .list-textbox span,
+    .laundaryman-storage-wrap .laundaryman-box .list-textbox input,
+    .laundaryman-storage-wrap .laundaryman-box .list-textbox textarea{
+        font-size: 13px;
+    }
+    .laundaryman-storage-wrap .laundaryman-box .btn button{
+        font-size: 13px;
+    }
+    
+    .laundaryman-storage-wrap .notice-box{
+        width: 253px;
+        height: 181px;
+        padding: 14px;
+    }
+    .laundaryman-storage-wrap .notice-box p:first-child{
+        font-size: 17px;
+    }
+    .laundaryman-storage-wrap .notice-box p{
+        font-size: 14px;
+    }
+    .laundaryman-storage-wrap .notice-box button {
+        font-size: 12px;
+    }
+    .laundaryman-storage-code-wrap .laundaryman-storage-code-box .code-box .code input{
+        font-size: 13px;
+    }
+    .laundaryman-storage-code-wrap .btn-wrap button,
+    .laundaryman-storage-code-wrap .list-btn button{
+        font-size: 12px;
+    }
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .list-textbox span{
+        width: 28%;
+    }
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .list-textbox span,
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .list-textbox input,
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .list-textbox .laundary-memo textarea, 
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .btn button{
+        font-size: 13px;
+    }
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .list-textbox .laundary-pickup-time input {
+        width: 37%;
+    }
+    .laundaryman-pickup-wrap .laundaryman-pickup-box .list-textbox .laundary-pickup-time button{
+        font-size: 12px;
+    }
+    .laundaryman-pickup-wrap .notice p:first-child{
+        font-size: 17px;
+    }
+    .laundaryman-pickup-wrap .notice p:nth-child(2){
+        font-size: 14px;
+    }
+    .laundaryman-pickup-wrap .notice button {
+        font-size: 12px;
+    }
+    .point-wrap .point-box .amount-box div > button,
+    .point-wrap .point-box .means-box > div button,
+    .point-wrap .charge-btn button {
+        font-size: 12px;
+    }
+    .point-wrap .point-box .amount-box .amount div button,
+    .point-wrap .point-box .means-box > div button{
+        padding: 10px;
+    }
+    .point-wrap .notice p:first-child {
+        font-size: 17px;
+    }
+    .point-wrap .notice button {
+        font-size: 12px;
+    }
+    /* .point-wrap .notice p:nth-child(2) {
+        font-size: 13px;
+    } */
+    .point-wrap .point-box .point-text input,
+    .point-wrap .point-box .point-text .btn-wrap button{
+        font-size: 12px;
+    }
+    .point-wrap .point-box .point-text p{
+        padding-bottom: 32px;
+    }
+}
