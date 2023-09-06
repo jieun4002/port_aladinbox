@@ -1,7 +1,12 @@
 @charset "utf-8";
 
+body{
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
 
-@media all and (max-width:600px) {
+
     h1{
         font-family: "payboocBold";
     }
@@ -31,7 +36,10 @@
     .nav-bar{
         position: fixed;
         width: 100%;
+        max-width: 600px;
         bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
         background-color: #F4F8FC;
         z-index: 9;
         /* display: none; */
@@ -197,7 +205,7 @@
     }
 
     .start-wrap .start-bg{
-        background: url(../images/start.png) no-repeat center bottom / cover;
+        background: url(../images/start.png) no-repeat center bottom / 100%;
         width: 100%;
         height: 100vh; 
         position: absolute;
@@ -205,7 +213,6 @@
         left: 0;
         z-index: 99;
         transition: all 1s;
-        /* animation: translateY ease-in-out 1.5s 0.8s forwards */
     }
     .start-bg.slideUp{
         transform: translateY(-53%);
@@ -217,14 +224,6 @@
         animation-fill-mode: forwards;
         animation-play-state: running;
     }
-    /* @keyframes translateY {
-        0%{
-            transform: translateY(0%);
-        }
-        100%{
-            transform: translateY(-50%);
-        }
-    } */
 
     .start-wrap .btn-wrap{
         width: 100%;
@@ -259,19 +258,24 @@
         margin-top: 0;
     }
 
-    .start-wrap .start-bg h1,
-    .login-wrap .login-title h1{
-        font-family: "payboocBold";
-        font-size: 8vw;
-        padding: 150px 0 0 50px;
+    .start-wrap .start-bg .title{
+        position: absolute;
+        left: 35%;
+        top: 22%;
+        transform: translate(-50% ,-50%);
     }
 
-    .start-wrap .start-bg p,
-    .login-wrap .login-title p{
-        font-size: 4vw;
-        padding-left: 56px;
+    .start-wrap .start-bg .title h1{
+        font-size: 45px;
+        line-height: 1;
+
+    }
+
+    .start-wrap .start-bg p{
+        font-size: 30px;
         font-weight: 400;
-        line-height: 3;
+        line-height: 1.6;
+        margin-top: 5px;
     }
     .common-bg {
         position: fixed;
@@ -281,8 +285,8 @@
         min-height: 100%;
         height: auto;
     }
-    /* 로그인 */
 
+    /* 로그인 */
     .login-wrap .login-txtbox,
     .join-wrap .join-txtbox{
         padding-top: 50px;
@@ -436,14 +440,11 @@
     }
 
     /* join - 회원가입 종류선택 */
-
     .join-wrap .join-txtbox p span{
         font-size: 14px;
     }
     
-
-
-       /* 입주민, 택배기사 회원가입 신청서 */
+    /* 입주민, 택배기사 회원가입 신청서 */
     .resident-form-wrap .resident-form-title,
     .delivery-form-wrap .delivery-form-title{
         padding: 25px 0;
@@ -3373,7 +3374,6 @@
 
 
 
-}
 
 
 
@@ -3393,6 +3393,13 @@
 
 
 @media all and (max-width:450px){
+    .start-wrap .start-bg .title h1{
+        font-size: 35px;
+    }
+    .start-wrap .start-bg p{
+        font-size: 25px;
+        margin: 0;
+    }
     .login-wrap .notice button, 
     .notice-box1 .notice button, 
     .notice-box2 .notice button, 
@@ -3993,9 +4000,7 @@
 }
 
 @media all and (max-width:425px){
-    .start-wrap .start-bg{
-        background-size: contain;
-    }
+
     .start-wrap .btn-wrap p:first-child{
         font-size: 35px;
         padding-bottom: 19px;
@@ -4075,6 +4080,12 @@
     }
 }
 @media all and (max-width:380px){
+    .start-wrap .start-bg .title h1{
+        font-size: 30px;
+    }
+    .start-wrap .start-bg p{
+        font-size: 20px;
+    }
     .start-wrap .btn-wrap p:first-child{
         font-size: 30px;
         padding-bottom: 17px;
